@@ -108,9 +108,9 @@ Todos los modelos anteriormente mencionados tienen su vista formulario y lista, 
         
     - **Búsqueda**: filtra por los próximos eventos registrados.
 
-![Untitled](./Resources/Untitled%203.png)
+		![Untitled](./Resources/Untitled%203.png)
 
-![Untitled](./Resources/Untitled%204.png)
+		![Untitled](./Resources/Untitled%204.png)
 
 - **Informe**:
     - **Form / Report**: Contiene un notebook para ver los asistentes del evento y además la posibilidad de poder imprimirlo como informe.
