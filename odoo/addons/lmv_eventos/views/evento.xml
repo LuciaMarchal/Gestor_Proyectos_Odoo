@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record id="lmv_eventos.evento_view_tree" model="ir.ui.view">
+            <field name="name">Evento</field>
+            <field name="model">lmv_eventos.evento</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name" />
+                    <field name="fecha" />
+                    <field name="ubicacion" />
+                    <field name="descripcion" />
+                    <field name="tipo" />
+                    <field name="asistente_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM -->
+        <record id="lmv_eventos.evento_view_form" model="ir.ui.view">
+            <field name="name">Evento</field>
+            <field name="model">lmv_eventos.evento</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div>
+                            <img t-att-src="'/lmv_eventos/static/images/eventos.png'"
+                                t-att-alt="Evento"
+                                width="300"
+                                align="right"
+                            />
+                        </div>
+                        <group>
+                            <field name="name" />
+                            <field name="fecha" />
+                            <field name="ubicacion" />
+                            <field name="descripcion" />
+                            <field name="tipo" />
+                            <field name="imagen"
+                                widget="image"
+                                options="{'size': [150, 150]}"
+                                type="base64"
+                            />
+                        </group>
+                        <notebook>
+                            <page string="Lista de Asistentes">
+                                <field name="asistente_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="email" />
+                                        <field name="evento_ids" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Lista de Recordatorios">
+                                <field name="recordatorio_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="fecha_envio" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Lista de informes">
+                                <field name="informe_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="fecha_generacion" />
+                                        <field name="asistentes_totales" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- KANBAN -->
+        <record id="lmv_eventos.evento_view_kanban" model="ir.ui.view">
+            <field name="name">Evento Kanban</field>
+            <field name="model">lmv_eventos.evento</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="tipo" quick_create="false" class="o_kanban_small_column"
+                    sample="1">
+                    <field name="tipo" />
+                    <field name="name" />
+                    <field name="fecha" />
+                    <field name="ubicacion" />
+                    <field name="descripcion" />
+                    <field name="asistente_ids" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                    <div class="o_kanban_image">
+                                        <field name="imagen"
+                                            widget="image"
+                                            options="{'size': [100, 100]}"
+                                            type="base64"
+                                        />
+                                    </div>
+                                    <div class="oe_kanban_content" style="margin-left: 50px;">
+                                        <div class="oe_kanban_card_header">
+                                            <strong>
+                                                <field name="name" />
+                                            </strong>
+                                        </div>
+                                        <div class="oe_kanban_card_body">
+                                            <field name="fecha" />
+                                            <br></br>
+                                            <field name="ubicacion" />
+                                            <br></br>
+                                            <field name="asistente_ids" />
+                                        </div>
+                                    </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- CALENDAR -->
+        <record id="lmv_eventos.evento_view_calendar" model="ir.ui.view">
+            <field name="name">Evento Calendario</field>
+            <field name="model">lmv_eventos.evento</field>
+            <field name="arch" type="xml">
+                <calendar string="Eventos" date_start="fecha" date_stop="fecha" color="tipo">
+                    <field name="name" />
+                    <field name="ubicacion" />
+                    <field name="descripcion" />
+                    <field name="asistente_ids" />
+                </calendar>
+            </field>
+        </record>
+
+        <!-- SEARCH -->
+        <record id="lmv_eventos.evento_view_search" model="ir.ui.view">
+            <field name="name">lmv_eventos.evento.view.search</field>
+            <field name="model">lmv_eventos.evento</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <filter name="proximos" string="Próximos"
+                        domain="[('fecha', '&gt;=', context_today())]" />
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

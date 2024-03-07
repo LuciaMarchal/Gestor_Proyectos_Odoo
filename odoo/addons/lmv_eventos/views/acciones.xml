@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ACTIONS -->
+        <record id="lmv_eventos.eventos_evento_action_window" model="ir.actions.act_window">
+            <field name="name">Eventos</field>
+            <field name="res_model">lmv_eventos.evento</field>
+            <field name="view_mode">tree,form,kanban,calendar</field>
+        </record>
+
+        <record id="lmv_eventos.eventos_asistente_action_view" model="ir.actions.act_window">
+            <field name="name">Asistentes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lmv_eventos.asistente</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="lmv_eventos.eventos_informe_action_window" model="ir.actions.act_window">
+            <field name="name">Informes</field>
+            <field name="res_model">lmv_eventos.informe</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="lmv_eventos.eventos_recordatorio_action_window" model="ir.actions.act_window">
+            <field name="name">Recordatorios</field>
+            <field name="res_model">lmv_eventos.recordatorio</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

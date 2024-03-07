@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lmv_eventos_evento_manager,lmv_eventos.evento,model_lmv_eventos_evento,base.group_erp_manager,1,1,1,1
+access_lmv_eventos_asistente_manager,lmv_eventos.asistente,model_lmv_eventos_asistente,base.group_erp_manager,1,1,1,1
+access_lmv_eventos_informe_manager,lmv_eventos.informe,model_lmv_eventos_informe,base.group_erp_manager,1,1,1,1
+access_lmv_eventos_recordatorio_manager,lmv_eventos.recordatorio,model_lmv_eventos_recordatorio,base.group_erp_manager,1,1,1,1
+
+access_lmv_eventos_evento_users,lmv_eventos.evento,model_lmv_eventos_evento,base.group_user,1,0,0,0
+access_lmv_eventos_asistente_users,lmv_eventos.asistente,model_lmv_eventos_asistente,base.group_user,1,0,0,0
+access_lmv_eventos_informe_users,lmv_eventos.informe,model_lmv_eventos_informe,base.group_user,1,0,0,0
+access_lmv_eventos_recordatorio_users,lmv_eventos.recordatorio,model_lmv_eventos_recordatorio,base.group_user,1,0,0,0
+
+access_lmv_eventos_evento_asistente,lmv_eventos.evento,model_lmv_eventos_evento,lmv_eventos_asistente_group,1,0,1,0
+access_lmv_eventos_asistente_asistente,lmv_eventos.asistente,model_lmv_eventos_asistente,lmv_eventos_asistente_group,1,0,1,0
+access_lmv_eventos_informe_asistente,lmv_eventos.informe,model_lmv_eventos_informe,lmv_eventos_asistente_group,1,0,1,0
+access_lmv_eventos_recordatorio_asistente,lmv_eventos.recordatorio,model_lmv_eventos_recordatorio,lmv_eventos_asistente_group,1,0,1,0

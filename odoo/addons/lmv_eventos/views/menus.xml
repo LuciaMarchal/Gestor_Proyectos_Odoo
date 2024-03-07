@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TOP MENU ITEM -->
+        <menuitem
+            id="lmv_eventos.eventos_menu"
+            name="Eventos"
+            groups="lmv_eventos_asistente_group,base.group_user,base.group_erp_manager"
+        />
+
+        <!-- EVENTO -->
+        <menuitem
+            id="lmv_eventos.eventos_evento_menu"
+            name="Eventos"
+            parent="lmv_eventos.eventos_menu"
+            action="lmv_eventos.eventos_evento_action_window"
+            groups="lmv_eventos_asistente_group,base.group_user,base.group_erp_manager"
+        />
+
+        <!-- ASISTENTE -->
+        <menuitem 
+            id="lmv_eventos.asistentes_evento_menu" 
+            name="Asistentes" 
+            parent="lmv_eventos.eventos_menu"
+            action="lmv_eventos.eventos_asistente_action_view"
+            groups="base.group_erp_manager"
+        />        
+
+        <!-- INFORME -->
+        <menuitem
+            id="lmv_eventos.eventos_informe_menu"
+            name="Informes"
+            parent="lmv_eventos.eventos_menu"
+            action="lmv_eventos.eventos_informe_action_window"
+            groups="base.group_erp_manager"
+        />
+
+        <!-- RECORDATORIO -->
+        <menuitem
+            id="lmv_eventos.eventos_recordatorio_menu"
+            name="Recordatorios"
+            parent="lmv_eventos.eventos_menu"
+            action="lmv_eventos.eventos_recordatorio_action_window"
+            groups="base.group_erp_manager"
+        />
+    </data>
+</odoo>

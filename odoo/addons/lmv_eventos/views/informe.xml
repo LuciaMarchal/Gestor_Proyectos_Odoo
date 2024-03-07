@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record id="lmv_eventos.informe_view_tree" model="ir.ui.view">
+            <field name="name">Informes de Eventos</field>
+            <field name="model">lmv_eventos.informe</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="fecha_generacion" />
+                    <field name="evento_id" />
+                    <field name="asistente_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM -->
+        <record id="lmv_eventos.informe_view_form" model="ir.ui.view">
+            <field name="name">Informe de Eventos</field>
+            <field name="model">lmv_eventos.informe</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div>
+                            <img t-att-src="'/lmv_eventos/static/images/informe.png'" 
+                                t-att-alt="Informe"
+                                width="300" 
+                                align="right"
+                            />
+                        </div>
+                        <group>
+                            <field name="name" />
+                            <field name="fecha_generacion" />
+                            <field name="evento_id" />
+                            <field name="asistentes_totales"/>                            
+                        </group>
+                        <div>
+                            <notebook>
+                                <page string="Lista de Asistentes">
+                                    <field name="asistente_ids">
+                                        <tree>
+                                            <field name="name" />
+                                            <field name="email" />
+                                            <field name="evento_ids" />
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- REPORTS -->
+        <report 
+            id="lmv_eventos_report_informe"
+            model="lmv_eventos.informe"
+            string="Informe de evento"
+            file="lmv_eventos.report_informe_view"
+            name="lmv_eventos.report_informe_view"
+            report_type="qweb-pdf"
+        />
+
+        <template id="lmv_eventos.report_informe_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="informe">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <img t-att-src="'/lmv_eventos/static/images/informe.png'"
+                                t-att-alt="Informe"
+                                width="300"
+                                align="right"
+                            />
+                            <br></br>
+                            <h3>Infome de asistencia de evento</h3>
+                            <div>
+                                <strong>Fecha de generacion:</strong>
+                                <span t-field="informe.fecha_generacion" />
+                            </div>
+                            <div>
+                                <strong>Evento:</strong>
+                                <span t-field="informe.evento_id" />
+                            </div>
+                            <div>
+                                <br></br>
+                                <strong>Asistentes totales:</strong>
+                                <span t-field="informe.asistentes_totales" />
+                                <br></br>
+                                <br></br>
+                                <strong>Asistentes:</strong>
+                                <t t-foreach="informe.asistente_ids" t-as="asistente">
+                                    <ul>
+                                        <li>
+                                            <span t-field="asistente.email" />
+                                        </li>
+                                    </ul>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
