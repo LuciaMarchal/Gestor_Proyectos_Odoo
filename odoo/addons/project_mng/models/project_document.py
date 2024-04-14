@@ -4,11 +4,11 @@ class Resource(models.Model):
     _name = 'project.document'
     _description = 'Resource model'
 
-    name = fields.Char('name')
-    description = fields.Text('description')
+    name = fields.Char()
+    description = fields.Text()
     type = fields.Selection([
         ('key', 'value')
-    ], string='type')
-    file = fields.Binary('file')
-    date = fields.Date('date')
-    project_id = fields.Many2one('project.project', string='project')
+    ])
+    file = fields.Binary()
+    date = fields.Date()
+    project_id = fields.Many2one('project.project', string='Project')

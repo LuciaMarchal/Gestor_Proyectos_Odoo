@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="project_view_tree" model="ir.ui.view">
+            <field name="name">project.view.tree</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="initial_date" />
+                    <field name="final_date" />
+                    <field name="worker_ids" widget="many2many_tags" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="project_view_form" model="ir.ui.view">
+            <field name="name">project.view.form</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group col="2">
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="initial_date" widget="daterange"
+                                options="{'related_end_date': 'final_date'}" />
+                            <field name="final_date" widget="daterange"
+                                options="{'related_start_date': 'initial_date'}" />
+                            <field name="color" widget="color_picker" />
+                        </group>
+                        <notebook>
+                            <page string="Workers">
+                                <field name="worker_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="surnames" />
+                                        <field name="job_title" />
+                                        <field name="department" />
+                                        <field name="email" />
+                                        <field name="phone" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Tasks">
+                                <field name="task_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="description" />
+                                        <field name="initial_date" widget="daterange"
+                                            options="{'related_end_date': 'final_date'}" />
+                                        <field name="final_date" widget="daterange"
+                                            options="{'related_start_date': 'initial_date'}" />
+                                        <field name="state" />
+                                        <field name="worker_id" />
+                                        <field name="comment_ids" widget="many2many_tags" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Documents">
+                                <field name="document_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="description" />
+                                        <field name="type" />
+                                        <field name="file" widget="binary" />
+                                        <field name="date" widget="date" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Reports">
+                                <field name="report_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="description" />
+                                        <field name="type" />
+                                        <field name="file" widget="file" />
+                                        <field name="date" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_view_calendar" model="ir.ui.view">
+            <field name="name">project.view.calendar</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <calendar string="Projects" date_start="initial_date" date_stop="final_date" color="color">
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="worker_ids" widget="many2many_tags" />
+                </calendar>
+            </field>
+        </record>
+    </data>
+</odoo>
