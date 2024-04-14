@@ -1,8 +1,0 @@
-# Normaliza por defecto los finales de línea
-* text=auto
-
-# Forzar finales de línea \n sobre estas extensiones, incluso cuando
-# trabajemos en Windows con WSL, ya que menu.sh utiliza otros ficheros
-*.sh text eol=lf
-*.yml text eol=lf
-*.txt text eol=lf

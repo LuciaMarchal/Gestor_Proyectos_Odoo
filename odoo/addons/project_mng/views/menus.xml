@@ -1,0 +1,36 @@
+<odoo>
+  <data>
+    <menuitem
+      id="project_parent_menu"
+      name="Projects"
+      sequence="1" />
+
+    <menuitem
+      id="project_menu"
+      name="Projects"
+      action="project_menu_action"
+      parent="project_parent_menu"
+      sequence="1" />
+
+    <menuitem
+      id="employee_menu"
+      name="Employees"
+      action="employee_menu_action"
+      parent="project_parent_menu"
+      sequence="2" />
+
+    <menuitem
+      id="report_menu"
+      name="Reports"
+      action="report_menu_action"
+      parent="project_parent_menu"
+      sequence="3" />
+
+    <menuitem
+      id="resource_menu"
+      name="Resources"
+      action="resource_menu_action"
+      parent="project_parent_menu"
+      sequence="4" />
+  </data>
+</odoo>

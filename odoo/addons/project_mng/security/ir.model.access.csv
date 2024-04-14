@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_manager,project.project,model_project_project,base.group_erp_manager,1,1,1,1
+access_comment_manager,project.comment,model_project_comment,base.group_erp_manager,1,1,1,1
+access_document_manager,project.document,model_project_document,base.group_erp_manager,1,1,1,1
+access_employee_manager,project.employee,model_project_employee,base.group_erp_manager,1,1,1,1
+access_report_manager,project.report,model_project_report,base.group_erp_manager,1,1,1,1
+access_resource_manager,project.resource,model_project_resource,base.group_erp_manager,1,1,1,1
+access_task_manager,project.task,model_project_task,base.group_erp_manager,1,1,1,1
