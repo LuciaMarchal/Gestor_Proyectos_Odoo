@@ -20,8 +20,17 @@
             <field name="model">project.project</field>
             <field name="arch" type="xml">
                 <form string="">
+                    <header>
+                        <button name="action_change_state" id="action_change_state" string="Next phase" class="btn-primary" type="object" attrs="{'invisible': ['|', ('state', 'not in', ['first_impressions', 'to_do', 'doing', 'testing', 'displayed']), ('id', '=', False)]}"/>
+
+                        <button name="action_change_state" id="action_change_state" string="Close" class="btn-primary" type="object" attrs="{'invisible': ['|', ('state', 'not in', ['done']), ('id', '=', False)]}"/>
+
+                        <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': ['|', ('state', 'not in', ['first_impressions', 'to_do']), ('id', '=', False)]}" />
+
+                        <field name="state" widget="statusbar" statusbar_visible="first_impressions,to_do,doing,testing,displayed,done,closed"/>
+                    </header>
                     <sheet>
-                        <group col="2">
+                        <group>
                             <field name="name" />
                             <field name="description" />
                             <field name="initial_date" widget="daterange"
@@ -97,5 +106,43 @@
                 </calendar>
             </field>
         </record>
+
+        <record id="project_view_kanban" model="ir.ui.view">
+            <field name="name">project.view.kanban</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" quick_create="false" class="o_kanban_small_column"
+                    sample="1">
+                    <field name="state" />
+                    <field name="description" />
+                    <field name="initial_date" />
+                    <field name="final_date" />
+                    <field name="worker_ids" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                    <div class="oe_kanban_content" style="margin-left: 50px;">
+                                        <div class="oe_kanban_card_header">
+                                            <strong>
+                                                <field name="name" />
+                                            </strong>
+                                        </div>
+                                        <div class="oe_kanban_card_body">
+                                            <field name="description" />
+                                            <br></br>
+                                            <field name="initial_date" />
+                                            <br></br>
+                                            <field name="final_date" />
+                                            <br></br>
+                                            <field name="worker_ids" widget="many2many_tags"/>
+                                        </div>
+                                    </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
     </data>
 </odoo>
