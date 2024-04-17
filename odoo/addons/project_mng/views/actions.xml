@@ -2,25 +2,25 @@
 <odoo>
     <data>
         <record id="project_menu_action" model="ir.actions.act_window">
-            <field name="name">Project menu</field>
+            <field name="name">Projects</field>
             <field name="res_model">project.project</field>
             <field name="view_mode">tree,form,calendar,kanban,graph</field>
         </record>
 
         <record id="employee_menu_action" model="ir.actions.act_window">
-            <field name="name">Employee menu</field>
+            <field name="name">Employees</field>
             <field name="res_model">project.employee</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <record id="report_menu_action" model="ir.actions.act_window">
-            <field name="name">Report menu</field>
+            <field name="name">Reports</field>
             <field name="res_model">project.report</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <record id="resource_menu_action" model="ir.actions.act_window">
-            <field name="name">Resource menu</field>
+            <field name="name">Resources</field>
             <field name="res_model">project.resource</field>
             <field name="view_mode">tree,form</field>
         </record>
