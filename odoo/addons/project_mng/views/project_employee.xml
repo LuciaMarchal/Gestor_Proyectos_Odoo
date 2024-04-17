@@ -12,8 +12,6 @@
                 <field name="job_title" />
                 <field name="department" />
                 <field name="project_id" />
-                <field name="comment_ids" widget="many2many_tags" />
-                <field name="task_ids" widget="many2many_tags" />
             </tree>
         </field>
     </record>
