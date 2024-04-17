@@ -21,13 +21,19 @@
             <field name="arch" type="xml">
                 <form string="">
                     <header>
-                        <button name="action_change_state" id="action_change_state" string="Next phase" class="btn-primary" type="object" attrs="{'invisible': ['|', ('state', 'not in', ['first_impressions', 'to_do', 'doing', 'testing', 'displayed']), ('id', '=', False)]}"/>
+                        <button name="action_change_state" id="action_change_state"
+                            string="Next phase" class="btn-primary" type="object"
+                            attrs="{'invisible': ['|', ('state', 'not in', ['first_impressions', 'to_do', 'doing', 'testing', 'displayed']), ('id', '=', False)]}" />
 
-                        <button name="action_change_state" id="action_change_state" string="Close" class="btn-primary" type="object" attrs="{'invisible': ['|', ('state', 'not in', ['done']), ('id', '=', False)]}"/>
+                        <button name="action_change_state" id="action_change_state" string="Close"
+                            class="btn-primary" type="object"
+                            attrs="{'invisible': ['|', ('state', 'not in', ['done']), ('id', '=', False)]}" />
 
-                        <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': ['|', ('state', 'not in', ['first_impressions', 'to_do']), ('id', '=', False)]}" />
+                        <button name="action_cancel" type="object" string="Cancel"
+                            attrs="{'invisible': ['|', ('state', 'not in', ['first_impressions', 'to_do']), ('id', '=', False)]}" />
 
-                        <field name="state" widget="statusbar" statusbar_visible="first_impressions,to_do,doing,testing,displayed,done,closed"/>
+                        <field name="state" widget="statusbar"
+                            statusbar_visible="first_impressions,to_do,doing,testing,displayed,done,closed" />
                     </header>
                     <sheet>
                         <group>
@@ -99,7 +105,8 @@
             <field name="name">project.view.calendar</field>
             <field name="model">project.project</field>
             <field name="arch" type="xml">
-                <calendar string="Projects" date_start="initial_date" date_stop="final_date" color="color">
+                <calendar string="Projects" date_start="initial_date" date_stop="final_date"
+                    color="color">
                     <field name="name" />
                     <field name="description" />
                     <field name="worker_ids" widget="many2many_tags" />
@@ -121,22 +128,22 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">
-                                    <div class="oe_kanban_content" style="margin-left: 50px;">
-                                        <div class="oe_kanban_card_header">
-                                            <strong>
-                                                <field name="name" />
-                                            </strong>
-                                        </div>
-                                        <div class="oe_kanban_card_body">
-                                            <field name="description" />
-                                            <br></br>
-                                            <field name="initial_date" />
-                                            <br></br>
-                                            <field name="final_date" />
-                                            <br></br>
-                                            <field name="worker_ids" widget="many2many_tags"/>
-                                        </div>
+                                <div class="oe_kanban_content" style="margin-left: 50px;">
+                                    <div class="oe_kanban_card_header">
+                                        <strong>
+                                            <field name="name" />
+                                        </strong>
                                     </div>
+                                    <div class="oe_kanban_card_body">
+                                        <field name="description" />
+                                        <br></br>
+                                        <field name="initial_date" />
+                                        <br></br>
+                                        <field name="final_date" />
+                                        <br></br>
+                                        <field name="worker_ids" widget="many2many_tags" />
+                                    </div>
+                                </div>
                             </div>
                         </t>
                     </templates>
@@ -144,5 +151,15 @@
             </field>
         </record>
 
+        <record id="project_view_graph" model="ir.ui.view">
+            <field name="name">project.view.graph</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <graph string="" type="bar">
+                    <field name="state" />
+                    <field name="id" type="count" />
+                </graph>
+            </field>
+        </record>
     </data>
 </odoo>
