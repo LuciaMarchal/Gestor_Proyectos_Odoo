@@ -1,13 +1,14 @@
 from odoo import models, fields
+from time import time
 
 class Project(models.Model):
     _name = 'project.project'
     _description = 'Project model'
     
-    name = fields.Char()
-    description = fields.Text()
-    initial_date = fields.Date()
-    final_date = fields.Date()
+    name = fields.Char(required=True)
+    description = fields.Text(required=True)
+    initial_date = fields.Date(required=True)
+    final_date = fields.Date(required=True)
     worker_ids = fields.One2many('project.employee', 'project_id', string='Workers')
     color = fields.Integer()
     state = fields.Selection([
@@ -24,7 +25,8 @@ class Project(models.Model):
     task_ids = fields.One2many('project.task', 'project_id', string='tasks')
     document_ids = fields.One2many('project.document', 'project_id', string='Documents')
     report_ids = fields.One2many('project.report', 'project_id', string='Reports')
-    
+    comment_ids = fields.One2many('project.comment', 'project_id', string='Comments')
+
     def action_change_state(self):
         for project in self:
             if project.state == 'first_impressions':
