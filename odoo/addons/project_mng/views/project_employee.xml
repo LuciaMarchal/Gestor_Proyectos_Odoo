@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="employee_view_tree" model="ir.ui.view">
+        <field name="name">employee.view.tree</field>
+        <field name="model">project.employee</field>
+        <field name="arch" type="xml">
+            <tree string="" editable="bottom" sample="1">
+                <field name="name" />
+                <field name="surnames" />
+                <field name="email" />
+                <field name="phone" />
+                <field name="job_title" />
+                <field name="department" />
+                <field name="project_id" />
+                <field name="comment_ids" widget="many2many_tags" />
+                <field name="task_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+</odoo>
