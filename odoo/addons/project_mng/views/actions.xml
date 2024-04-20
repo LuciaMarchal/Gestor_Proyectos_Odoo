@@ -24,5 +24,12 @@
             <field name="res_model">project.resource</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <record id="task_menu_action" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
     </data>
 </odoo>
