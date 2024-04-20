@@ -9,8 +9,14 @@ class Task(models.Model):
     initial_date = fields.Date()
     final_date = fields.Date()
     state = fields.Selection([
-        ('key', 'value')
-    ])
+        ('to_do', 'To do'),
+        ('doing', 'Doing'),
+        ('testing', 'Testing'),
+        ('displayed', 'Displayed'),
+        ('done', 'Done'),
+        ('closed', 'Closed'),
+        ('canceled', 'Canceled')
+    ], default="to_do")
     worker_id = fields.Many2one('project.employee', string='Worker')
     project_id = fields.Many2one('project.project', string='Project')
     
