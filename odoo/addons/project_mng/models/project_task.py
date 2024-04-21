@@ -1,4 +1,5 @@
 from odoo import models, fields
+from datetime import datetime
 
 class Task(models.Model):
     _name = 'project.task'
@@ -6,7 +7,7 @@ class Task(models.Model):
     
     name = fields.Char()
     description = fields.Text()
-    initial_date = fields.Date()
+    initial_date = fields.Date(default=datetime.today(), readonly=True)
     final_date = fields.Date()
     state = fields.Selection([
         ('to_do', 'To do'),
@@ -19,5 +20,10 @@ class Task(models.Model):
     ], default="to_do")
     worker_id = fields.Many2one('project.employee', string='Worker')
     project_id = fields.Many2one('project.project', string='Project')
-    
-    comment_ids = fields.One2many('project.comment', 'task_id', string='Comments')
+    comment = fields.Char()
+    priority = fields.Selection([
+        ('0', 'Low'),
+        ('1', 'Medium'),
+        ('2', 'High'),
+        ('3', 'Very High')
+    ])
