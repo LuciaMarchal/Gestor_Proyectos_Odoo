@@ -22,7 +22,7 @@ class Employee(models.Model):
     user_id = fields.Many2one('res.users', string='User')
     
     project_id = fields.Many2one('project.project', string='Project')
-    comment_ids = fields.One2many('project.comment', 'user_id', string='Comments')
+    message_ids = fields.One2many('project.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project.task', 'worker_id', string='Tasks')
     
     @api.model_create_single

@@ -25,7 +25,7 @@ class Project(models.Model):
     task_ids = fields.One2many('project.task', 'project_id', string='tasks')
     document_ids = fields.One2many('project.document', 'project_id', string='Documents')
     report_ids = fields.One2many('project.report', 'project_id', string='Reports')
-    comment_ids = fields.One2many('project.comment', 'project_id', string='Comments')
+    message_ids = fields.One2many('project.message', 'project_id', string='Messages')
 
     def action_change_state(self):
         for project in self:
