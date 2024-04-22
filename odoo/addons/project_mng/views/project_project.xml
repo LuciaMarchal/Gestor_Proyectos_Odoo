@@ -84,6 +84,15 @@
                                     </tree>
                                 </field>
                             </page>
+                            <page string="Resources">
+                                <field name="resource_ids" >
+                                    <tree>
+                                        <field name="description" />
+                                        <field name="type" />
+                                        <field name="availability" />
+                                    </tree>
+                                </field>
+                            </page>
                             <page string="Reports">
                                 <field name="report_ids">
                                     <tree>
