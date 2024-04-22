@@ -30,6 +30,5 @@
             <field name="res_model">project.task</field>
             <field name="view_mode">tree,form</field>
         </record>
-
     </data>
 </odoo>
