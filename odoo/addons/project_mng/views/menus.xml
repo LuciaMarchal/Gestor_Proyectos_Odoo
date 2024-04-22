@@ -25,12 +25,5 @@
       action="report_menu_action"
       parent="project_parent_menu"
       sequence="3" />
-
-    <menuitem
-      id="resource_menu"
-      name="Resources"
-      action="resource_menu_action"
-      parent="project_parent_menu"
-      sequence="4" />
   </data>
 </odoo>
