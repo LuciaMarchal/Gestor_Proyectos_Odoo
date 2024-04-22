@@ -20,7 +20,7 @@ class Task(models.Model):
     ], default="to_do")
     worker_id = fields.Many2one('project.employee', string='Worker')
     project_id = fields.Many2one('project.project', string='Project')
-    comment = fields.Char()
+    comment = fields.Text()
     priority = fields.Selection([
         ('0', 'Low'),
         ('1', 'Medium'),
