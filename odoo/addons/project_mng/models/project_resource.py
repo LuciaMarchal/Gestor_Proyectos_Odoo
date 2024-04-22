@@ -6,7 +6,8 @@ class Resource(models.Model):
     
     description = fields.Text()
     type = fields.Selection([
-        ('key', 'value')
+        ('human_resources', 'Human Resources'),
+        ('materials', 'Materials'),
+        ('financial', 'Financial'),
     ])
     availability = fields.Integer()
-
