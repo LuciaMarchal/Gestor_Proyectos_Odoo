@@ -26,7 +26,8 @@ class Project(models.Model):
     document_ids = fields.One2many('project.document', 'project_id', string='Documents')
     report_ids = fields.One2many('project.report', 'project_id', string='Reports')
     message_ids = fields.One2many('project.message', 'project_id', string='Messages')
-
+    resource_ids = fields.Many2many('project.resource', string='Resources')
+    
     def action_change_state(self):
         for project in self:
             if project.state == 'first_impressions':
