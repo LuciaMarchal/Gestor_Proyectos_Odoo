@@ -11,3 +11,4 @@ class Resource(models.Model):
         ('financial', 'Financial'),
     ])
     availability = fields.Integer()
+    
