@@ -19,7 +19,7 @@ class Employee(models.Model):
     department = fields.Char()
     email = fields.Char()
     phone = fields.Char()
-    user_id = fields.Many2one('res.users', string='User')
+    user_id = fields.Many2one('res.users', string='User', delete="on_cascade")
     
     project_id = fields.Many2one('project_mng.project', string='Project')
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')

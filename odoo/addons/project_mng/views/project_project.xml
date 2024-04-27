@@ -63,10 +63,7 @@
                                     <tree editable="bottom" >
                                         <field name="name" widget="handle"/>
                                         <field name="description" />
-                                        <field name="initial_date" widget="daterange"
-                                            options="{'related_end_date': 'final_date'}" />
-                                        <field name="final_date" widget="daterange"
-                                            options="{'related_start_date': 'initial_date'}" />
+                                        <field name="initial_date" widget="date" />
                                         <field name="state"/>
                                         <field name="worker_id" />
                                         <field name="comment" />

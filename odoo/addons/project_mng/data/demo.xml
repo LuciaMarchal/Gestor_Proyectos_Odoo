@@ -7,7 +7,7 @@
       <field name="surnames">Smith</field>
       <field name="job_title">leader</field>
       <field name="department">Operations</field>
-      <field name="email"> john.smith@example.com</field>
+      <field name="email">john.smith@example.com</field>
       <field name="phone">601234567</field>
     </record>  
 
@@ -96,12 +96,77 @@
     <!-- PROJECTS -->
     <record id="project_demo_1" model="project_mng.project">
       <field name="name">Web Application Development</field>
-      <field name="description">Project to develop a task management web application</field>
+      <field name="description">Project to develop a task management web application.</field>
       <field name="initial_date">2024-04-12</field>
       <field name="final_date">2024-11-23</field>
-      <field name="worker_ids" eval="[(4, ref('worker_demo_1'))]"/>
+      <field 
+        name="worker_ids" 
+        eval="[
+          (4, ref('worker_demo_1')),
+          (4, ref('worker_demo_2')),
+        ]"/>
       <field name="color">2</field>
       <field name="state">first_impressions</field>
+    </record>
+
+    <record id="project_demo_2" model="project_mng.project">
+      <field name="name">Website Redesign</field>
+      <field name="description">Redesigning the company website to improve user experience and modernize the design.</field>
+      <field name="initial_date">2024-05-01</field>
+      <field name="final_date">2024-07-01</field>
+      <field 
+        name="worker_ids" 
+        eval="[
+          (4, ref('worker_demo_6')),
+          (4, ref('worker_demo_7')),
+        ]"/>
+      <field name="color">5</field>
+      <field name="state">to_do</field>
+    </record>
+
+    <record id="project_demo_3" model="project_mng.project">
+      <field name="name">Mobile App Development</field>
+      <field name="description">Developing a new mobile application for iOS and Android platforms to expand the company's reach.</field>
+      <field name="initial_date">2024-04-15</field>
+      <field name="final_date">2024-09-30</field>
+      <field 
+        name="worker_ids" 
+        eval="[
+        (4, ref('worker_demo_9')),
+        (4, ref('worker_demo_10')),
+      ]"/>
+      <field name="color">7</field>
+      <field name="state">doing</field>
+    </record>
+
+    <record id="project_demo_4" model="project_mng.project">
+      <field name="name">Marketing Campaign</field>
+      <field name="description">Planning and executing a comprehensive marketing campaign to increase brand awareness and attract new customers.</field>
+      <field name="initial_date">2024-03-01</field>
+      <field name="final_date">2024-06-30</field>
+      <field 
+        name="worker_ids" 
+        eval="[
+          (4, ref('worker_demo_8')),
+          (4, ref('worker_demo_3')),
+        ]"/>
+      <field name="color">3</field>
+      <field name="state">testing</field>
+    </record>
+
+    <record id="project_demo_5" model="project_mng.project">
+      <field name="name">Product Launch</field>
+      <field name="description">Launching a new product line in the market with a focus on innovative features and customer satisfaction.</field>
+      <field name="initial_date">2024-06-01</field>
+      <field name="final_date">2024-08-31</field>
+      <field 
+        name="worker_ids" 
+        eval="[
+          (4, ref('worker_demo_4')),
+          (4, ref('worker_demo_5')),
+        ]"/>
+      <field name="color">8</field>
+      <field name="state">to_do</field>
     </record>
 
     <!-- RESOURCES -->
@@ -125,51 +190,278 @@
 
     <!-- TASKS -->
     <record id="task_demo_1" model="project_mng.task">
-      <field name="name">Design User Interface</field>
-      <field name="description">Create the user interface design for the web application.</field>
-      <field name="initial_date">2024-02-01</field>
-      <field name="final_date">2024-02-15</field>
+      <field name="name">Create Homepage Layout</field>
+      <field name="description">Design the layout for the homepage of the website.</field>
+      <field name="initial_date">2024-04-13</field>
       <field name="state">to_do</field>
-      <!-- <field name="worker_id"></field> -->
+      <field name="worker_id" ref="worker_demo_1"/>
       <field name="project_id" ref="project_demo_1" />
-      <field name="comment">This task requires collaboration with the design team.</field>
+      <field name="comment">Ensure it's user-friendly and visually appealing.</field>
       <field name="priority">2</field>
     </record>
 
     <record id="task_demo_2" model="project_mng.task">
-      <field name="name">Backend Development</field>
-      <field name="description">Implement backend functionality for the web application.</field>
-      <field name="initial_date">2024-02-20</field>
-      <field name="final_date">2024-03-15</field>
+      <field name="name">Implement User Authentication</field>
+      <field name="description">Develop the functionality for user login and registration.</field>
+      <field name="initial_date">2024-04-12</field>
       <field name="state">to_do</field>
-      <!-- WORKER -->
+      <field name="worker_id" ref="worker_demo_2"/>
       <field name="project_id" ref="project_demo_1" />
-      <field name="comment">Backend tasks require expertise in Python and Django.</field>
+      <field name="comment">Use secure authentication methods.</field>
       <field name="priority">2</field>
     </record>
 
     <record id="task_demo_3" model="project_mng.task">
-      <field name="name">Frontend Development</field>
-      <field name="description">Implement frontend functionality for the web application.</field>
-      <field name="initial_date">2024-03-01</field>
-      <field name="final_date">2024-03-20</field>
+      <field name="name">Test Homepage Responsiveness</field>
+      <field name="description">Test the responsiveness of the homepage layout across various devices and screen sizes.</field>
+      <field name="initial_date">2024-05-04</field>
       <field name="state">to_do</field>
-      <!-- WORKER -->
+      <field name="worker_id" ref="worker_demo_3"/>
       <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Check compatibility with mobile, tablet, and desktop.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_4" model="project_mng.task">
+      <field name="name">Develop Product Search Feature</field>
+      <field name="description">Implement a search functionality for users to find products.</field>
+      <field name="initial_date">2024-05-06</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_4"/>
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Include filters and sorting options.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_5" model="project_mng.task">
+      <field name="name">Design Product Detail Page</field>
+      <field name="description">Create the layout and design for individual product pages.</field>
+      <field name="initial_date">2024-05-10</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_5"/>
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Include high-quality images and detailed descriptions.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_6" model="project_mng.task">
+      <field name="name">Develop Shopping Cart Functionality</field>
+      <field name="description">Implement the functionality for users to add products to their shopping cart.</field>
+      <field name="initial_date">2024-05-15</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_6"/>
+      <field name="project_id" ref="project_demo_2" />
+      <field name="comment">Allow users to modify quantities and proceed to checkout.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_7" model="project_mng.task">
+      <field name="name">Test User Authentication</field>
+      <field name="description">Test the login and registration processes for security and functionality.</field>
+      <field name="initial_date">2024-05-20</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_7"/>
+      <field name="project_id" ref="project_demo_2" />
+      <field name="comment">Check for any vulnerabilities or bugs.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_8" model="project_mng.task">
+      <field name="name">Implement Payment Gateway Integration</field>
+      <field name="description">Integrate a payment gateway for secure online transactions.</field>
+      <field name="initial_date">2024-05-23</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_8"/>
+      <field name="project_id" ref="project_demo_2" />
+      <field name="comment">Ensure PCI compliance and user data security.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_9" model="project_mng.task">
+      <field name="name">Test Product Search Feature</field>
+      <field name="description">Test the search functionality to ensure accurate and relevant results.</field>
+      <field name="initial_date">2024-05-28</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_2" />
+      <field name="comment">Test with various search queries and scenarios.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_10" model="project_mng.task">
+      <field name="name">Implement User Profile Management</field>
+      <field name="description">Develop functionality for users to manage their profiles and preferences.</field>
+      <field name="initial_date">2024-06-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_10"/>
+      <field name="project_id" ref="project_demo_2" />
+      <field name="comment">Allow users to update personal information and preferences.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_11" model="project_mng.task">
+      <field name="name">Design Checkout Process</field>
+      <field name="description">Design the layout and flow for the checkout process.</field>
+      <field name="initial_date">2024-04-23</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_2"/>
+      <field name="project_id" ref="project_demo_3" />
+      <field name="comment">This task requires collaboration with the design team.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_12" model="project_mng.task">
+      <field name="name">Develop Order Tracking System</field>
+      <field name="description">Implement a system for users to track the status of their orders.</field>
+      <field name="initial_date">2024-04-20</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_2"/>
+      <field name="project_id" ref="project_demo_3" />
+      <field name="comment">Backend tasks require expertise in Python and Django.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_13" model="project_mng.task">
+      <field name="name">Test Shopping Cart Functionality</field>
+      <field name="description">Test the shopping cart functionality for accuracy and reliability.</field>
+      <field name="initial_date">2024-05-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_2"/>
+      <field name="project_id" ref="project_demo_3" />
+      <field name="comment">Frontend tasks involve HTML, CSS, and JavaScript development.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_14" model="project_mng.task">
+      <field name="name">Implement Wishlist Feature</field>
+      <field name="description">Develop functionality for users to add products to a wishlist.</field>
+      <field name="initial_date">2024-06-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_1"/>
+      <field name="project_id" ref="project_demo_3" />
+      <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_15" model="project_mng.task">
+      <field name="name">Design Admin Dashboard</field>
+      <field name="description">Provide tools for managing products, orders, and users.</field>
+      <field name="initial_date">2024-08-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_1"/>
+      <field name="project_id" ref="project_demo_3" />
+      <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_16" model="project_mng.task">
+      <field name="name">Develop Review and Rating System</field>
+      <field name="description">Implement functionality for users to leave reviews and ratings for products.</field>
+      <field name="initial_date">2024-04-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_4" />
+      <field name="comment">This task requires collaboration with the design team.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_17" model="project_mng.task">
+      <field name="name">Test Checkout Process</field>
+      <field name="description">Test the entire checkout process from adding items to completing payment.</field>
+      <field name="initial_date">2024-03-20</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_4" />
+      <field name="comment">Backend tasks require expertise in Python and Django.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_18" model="project_mng.task">
+      <field name="name">Implement Order Management System</field>
+      <field name="description">Develop functionality for admins to manage orders and process shipments.</field>
+      <field name="initial_date">2024-03-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_3" />
       <field name="comment">Frontend tasks involve HTML, CSS, and JavaScript development.</field>
       <field name="priority">2</field>
     </record>
 
-    <record id="task_demo_4" model="project_mng.task">
-      <field name="name">Testing and QA</field>
-      <field name="description">Conduct testing and quality assurance for the web application.</field>
+    <record id="task_demo_19" model="project_mng.task">
+      <field name="name">Test User Profile Management</field>
+      <field name="description">Test the user profile management features for functionality and usability.</field>
       <field name="initial_date">2024-04-01</field>
-      <field name="final_date">2024-04-15</field>
       <field name="state">to_do</field>
-      <!-- WORKER -->
-      <field name="project_id" ref="project_demo_1" />
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_5" />
+      <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_20" model="project_mng.task">
+      <field name="name">Implement Customer Support System</field>
+      <field name="description">Integrate a system for users to contact customer support and receive assistance.</field>
+      <field name="initial_date">2024-06-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_5"/>
+      <field name="project_id" ref="project_demo_4" />
       <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
       <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_21" model="project_mng.task">
+      <field name="name">Design Email Notification Templates</field>
+      <field name="description">Design templates for automated email notifications such as order confirmations and updates.</field>
+      <field name="initial_date">2024-07-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_5" />
+      <field name="comment">This task requires collaboration with the design team.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_22" model="project_mng.task">
+      <field name="name"></field>
+      <field name="description">Implement backend functionality for the web application.</field>
+      <field name="initial_date">2024-06-20</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_4" />
+      <field name="comment">Backend tasks require expertise in Python and Django.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_23" model="project_mng.task">
+      <field name="name">Develop Automated Testing Suite</field>
+      <field name="description">Develop a suite of automated tests to ensure the reliability and stability of the application.</field>
+      <field name="initial_date">2024-07-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_5" />
+      <field name="comment">Frontend tasks involve HTML, CSS, and JavaScript development.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_24" model="project_mng.task">
+      <field name="name">Test Wishlist Feature</field>
+      <field name="description">Test the wishlist feature for functionality and performance.</field>
+      <field name="initial_date">2024-08-12</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
+      <field name="priority">1</field>
+    </record>
+
+    <record id="task_demo_25" model="project_mng.task">
+      <field name="name">Perform Security Audit</field>
+      <field name="description">Conduct a comprehensive security audit to identify and address any vulnerabilities.</field>
+      <field name="initial_date">2024-04-01</field>
+      <field name="state">to_do</field>
+      <field name="worker_id" ref="worker_demo_9"/>
+      <field name="project_id" ref="project_demo_4" />
+      <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
+      <field name="priority">3</field>
     </record>
   </data>
 </odoo>

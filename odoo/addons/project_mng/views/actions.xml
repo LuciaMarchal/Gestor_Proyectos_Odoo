@@ -18,11 +18,5 @@
             <field name="res_model">project_mng.report</field>
             <field name="view_mode">tree,form</field>
         </record>
-
-        <record id="task_menu_action" model="ir.actions.act_window">
-            <field name="name">Tasks</field>
-            <field name="res_model">project_mng.task</field>
-            <field name="view_mode">tree,form</field>
-        </record>
     </data>
 </odoo>
