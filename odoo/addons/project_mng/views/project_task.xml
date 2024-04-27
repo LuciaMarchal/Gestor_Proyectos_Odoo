@@ -2,7 +2,7 @@
 <odoo>
     <record id="task_view_form" model="ir.ui.view">
         <field name="name">task.view.form</field>
-        <field name="model">project.task</field>
+        <field name="model">project_mng.task</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>

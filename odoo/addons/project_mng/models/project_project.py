@@ -2,14 +2,14 @@ from odoo import models, fields
 from time import time
 
 class Project(models.Model):
-    _name = 'project.project'
+    _name = 'project_mng.project'
     _description = 'Project model'
     
     name = fields.Char(required=True)
     description = fields.Text(required=True)
     initial_date = fields.Date(required=True)
     final_date = fields.Date(required=True)
-    worker_ids = fields.One2many('project.employee', 'project_id', string='Workers')
+    worker_ids = fields.One2many('project_mng.employee', 'project_id', string='Workers')
     color = fields.Integer()
     state = fields.Selection([
         ('first_impressions', 'First impressions'),
@@ -22,11 +22,11 @@ class Project(models.Model):
         ('canceled', 'Canceled')
     ], default="first_impressions")
     
-    task_ids = fields.One2many('project.task', 'project_id', string='tasks')
-    document_ids = fields.One2many('project.document', 'project_id', string='Documents')
-    report_ids = fields.One2many('project.report', 'project_id', string='Reports')
-    message_ids = fields.One2many('project.message', 'project_id', string='Messages')
-    resource_ids = fields.Many2many('project.resource', string='Resources')
+    task_ids = fields.One2many('project_mng.task', 'project_id', string='tasks')
+    document_ids = fields.One2many('project_mng.document', 'project_id', string='Documents')
+    report_ids = fields.One2many('project_mng.report', 'project_id', string='Reports')
+    message_ids = fields.One2many('project_mng.message', 'project_id', string='Messages')
+    resource_ids = fields.Many2many('project_mng.resource', string='Resources')
     
     def action_change_state(self):
         for project in self:

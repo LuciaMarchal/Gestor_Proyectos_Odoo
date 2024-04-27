@@ -2,7 +2,7 @@
 <odoo>
     <record id="employee_view_tree" model="ir.ui.view">
         <field name="name">employee.view.tree</field>
-        <field name="model">project.employee</field>
+        <field name="model">project_mng.employee</field>
         <field name="arch" type="xml">
             <tree string="" editable="bottom" sample="1">
                 <field name="name" />

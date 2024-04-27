@@ -24,6 +24,7 @@
 
     # always loaded
     'data': [
+        'data/demo.xml',
         'security/ir.model.access.csv',
         'views/project_project.xml',
         'views/project_employee.xml',
@@ -33,7 +34,7 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'data/demo.xml',
     ],
     'application': True
 }

@@ -2,7 +2,7 @@ from odoo import models, fields
 from datetime import datetime
 
 class Task(models.Model):
-    _name = 'project.task'
+    _name = 'project_mng.task'
     _description = 'Task model'
     
     name = fields.Char()
@@ -18,8 +18,8 @@ class Task(models.Model):
         ('closed', 'Closed'),
         ('canceled', 'Canceled')
     ], default="to_do")
-    worker_id = fields.Many2one('project.employee', string='Worker')
-    project_id = fields.Many2one('project.project', string='Project')
+    worker_id = fields.Many2one('project_mng.employee', string='Worker')
+    project_id = fields.Many2one('project_mng.project', string='Project')
     comment = fields.Text()
     priority = fields.Selection([
         ('0', 'Low'),

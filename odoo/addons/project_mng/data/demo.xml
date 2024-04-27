@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <!-- WORKERS -->
+    <record id="worker_demo_1" model="project_mng.employee">
+      <field name="name">John</field>
+      <field name="surnames">Smith</field>
+      <field name="job_title">leader</field>
+      <field name="department">Operations</field>
+      <field name="email"> john.smith@example.com</field>
+      <field name="phone">601234567</field>
+    </record>  
+
+    <record id="worker_demo_2" model="project_mng.employee">
+      <field name="name">Emily</field>
+      <field name="surnames">Johnson</field>
+      <field name="job_title">leader</field>
+      <field name="department">Marketing</field>
+      <field name="email">emily.johnson@example.com</field>
+      <field name="phone">012345678</field>
+    </record>    
+
+    <record id="worker_demo_3" model="project_mng.employee">
+      <field name="name">Michael</field>
+      <field name="surnames">Williams</field>
+      <field name="job_title">developer</field>
+      <field name="department">IT</field>
+      <field name="email">michael.williams@example.com</field>
+      <field name="phone">601234567</field>
+    </record>    
+
+    <record id="worker_demo_4" model="project_mng.employee">
+      <field name="name">Jennifer</field>
+      <field name="surnames">Brown</field>
+      <field name="job_title">designer</field>
+      <field name="department">Creative</field>
+      <field name="email">jennifer.brown@example.com</field>
+      <field name="phone">601234567</field>
+    </record>    
+
+    <record id="worker_demo_5" model="project_mng.employee">
+      <field name="name">David</field>
+      <field name="surnames">Davis</field>
+      <field name="job_title">tester</field>
+      <field name="department">QA</field>
+      <field name="email">david.davis@example.com</field>
+      <field name="phone">601234567</field>
+    </record> 
+
+    <record id="worker_demo_6" model="project_mng.employee">
+      <field name="name">Jessica</field>
+      <field name="surnames">Miller</field>
+      <field name="job_title">admin</field>
+      <field name="department">Administration</field>
+      <field name="email">jessica.miller@example.com</field>
+      <field name="phone">601234567</field>
+    </record>  
+      
+    <record id="worker_demo_7" model="project_mng.employee">
+      <field name="name">Daniel</field>
+      <field name="surnames">Wilson</field>
+      <field name="job_title">db_admin</field>
+      <field name="department">IT</field>
+      <field name="email">daniel.wilson@example.com</field>
+      <field name="phone">601234567</field>
+    </record>    
+
+    <record id="worker_demo_8" model="project_mng.employee">
+      <field name="name">Sarah</field>
+      <field name="surnames">Moore</field>
+      <field name="job_title">intern</field>
+      <field name="department">HR</field>
+      <field name="email">sarah.moore@example.com</field>
+      <field name="phone">601234567</field>
+    </record>    
+
+    <record id="worker_demo_9" model="project_mng.employee">
+      <field name="name">Christopher</field>
+      <field name="surnames">Taylor</field>
+      <field name="job_title">developer</field>
+      <field name="department">IT</field>
+      <field name="email">christopher.taylor@example.com</field>
+      <field name="phone">601234567</field>
+    </record>    
+
+    <record id="worker_demo_10" model="project_mng.employee">
+      <field name="name">Samantha</field>
+      <field name="surnames">Anderson</field>
+      <field name="job_title">tester</field>
+      <field name="department">QA</field>
+      <field name="email">samantha.anderson@example.com</field>
+      <field name="phone">601234567</field>
+    </record>    
+   
+
+    <!-- PROJECTS -->
+    <record id="project_demo_1" model="project_mng.project">
+      <field name="name">Web Application Development</field>
+      <field name="description">Project to develop a task management web application</field>
+      <field name="initial_date">2024-04-12</field>
+      <field name="final_date">2024-11-23</field>
+      <field name="worker_ids" eval="[(4, ref('worker_demo_1'))]"/>
+      <field name="color">2</field>
+      <field name="state">first_impressions</field>
+    </record>
+
+    <!-- RESOURCES -->
+    <record id="resource_demo_1" model="project_mng.resource">
+      <field name="description">Development Server</field>
+      <field name="type">materials</field>
+      <field name="availability">5</field>
+    </record>
+
+    <record id="resource_demo_2" model="project_mng.resource">
+      <field name="description">Financial Budget</field>
+      <field name="type">financial</field>
+      <field name="availability">1</field>
+    </record>
+
+    <record id="resource_demo_3" model="project_mng.resource">
+      <field name="description">Senior Developer</field>
+      <field name="type">human_resources</field>
+      <field name="availability">1</field>
+    </record>
+
+    <!-- TASKS -->
+    <record id="task_demo_1" model="project_mng.task">
+      <field name="name">Design User Interface</field>
+      <field name="description">Create the user interface design for the web application.</field>
+      <field name="initial_date">2024-02-01</field>
+      <field name="final_date">2024-02-15</field>
+      <field name="state">to_do</field>
+      <!-- <field name="worker_id"></field> -->
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">This task requires collaboration with the design team.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_2" model="project_mng.task">
+      <field name="name">Backend Development</field>
+      <field name="description">Implement backend functionality for the web application.</field>
+      <field name="initial_date">2024-02-20</field>
+      <field name="final_date">2024-03-15</field>
+      <field name="state">to_do</field>
+      <!-- WORKER -->
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Backend tasks require expertise in Python and Django.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_3" model="project_mng.task">
+      <field name="name">Frontend Development</field>
+      <field name="description">Implement frontend functionality for the web application.</field>
+      <field name="initial_date">2024-03-01</field>
+      <field name="final_date">2024-03-20</field>
+      <field name="state">to_do</field>
+      <!-- WORKER -->
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Frontend tasks involve HTML, CSS, and JavaScript development.</field>
+      <field name="priority">2</field>
+    </record>
+
+    <record id="task_demo_4" model="project_mng.task">
+      <field name="name">Testing and QA</field>
+      <field name="description">Conduct testing and quality assurance for the web application.</field>
+      <field name="initial_date">2024-04-01</field>
+      <field name="final_date">2024-04-15</field>
+      <field name="state">to_do</field>
+      <!-- WORKER -->
+      <field name="project_id" ref="project_demo_1" />
+      <field name="comment">Testing tasks are crucial to ensure the application's reliability.</field>
+      <field name="priority">2</field>
+    </record>
+  </data>
+</odoo>

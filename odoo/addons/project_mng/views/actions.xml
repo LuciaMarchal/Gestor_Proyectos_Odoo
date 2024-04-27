@@ -3,25 +3,25 @@
     <data>
         <record id="project_menu_action" model="ir.actions.act_window">
             <field name="name">Projects</field>
-            <field name="res_model">project.project</field>
+            <field name="res_model">project_mng.project</field>
             <field name="view_mode">tree,form,calendar,kanban,graph</field>
         </record>
 
         <record id="employee_menu_action" model="ir.actions.act_window">
             <field name="name">Employees</field>
-            <field name="res_model">project.employee</field>
+            <field name="res_model">project_mng.employee</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <record id="report_menu_action" model="ir.actions.act_window">
             <field name="name">Reports</field>
-            <field name="res_model">project.report</field>
+            <field name="res_model">project_mng.report</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <record id="task_menu_action" model="ir.actions.act_window">
             <field name="name">Tasks</field>
-            <field name="res_model">project.task</field>
+            <field name="res_model">project_mng.task</field>
             <field name="view_mode">tree,form</field>
         </record>
     </data>

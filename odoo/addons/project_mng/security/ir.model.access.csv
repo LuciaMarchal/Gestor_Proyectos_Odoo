@@ -1,8 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_project_manager,project.project,model_project_project,base.group_erp_manager,1,1,1,1
-access_message_manager,project.message,model_project_message,base.group_erp_manager,1,1,1,1
-access_document_manager,project.document,model_project_document,base.group_erp_manager,1,1,1,1
-access_employee_manager,project.employee,model_project_employee,base.group_erp_manager,1,1,1,1
-access_report_manager,project.report,model_project_report,base.group_erp_manager,1,1,1,1
-access_resource_manager,project.resource,model_project_resource,base.group_erp_manager,1,1,1,1
-access_task_manager,project.task,model_project_task,base.group_erp_manager,1,1,1,1
+access_project_manager,project_mng.project,model_project_mng_project,base.group_erp_manager,1,1,1,1
+access_message_manager,project_mng.message,model_project_mng_message,base.group_erp_manager,1,1,1,1
+access_document_manager,project_mng.document,model_project_mng_document,base.group_erp_manager,1,1,1,1
+access_employee_manager,project_mng.employee,model_project_mng_employee,base.group_erp_manager,1,1,1,1
+access_report_manager,project_mng.report,model_project_mng_report,base.group_erp_manager,1,1,1,1
+access_resource_manager,project_mng.resource,model_project_mng_resource,base.group_erp_manager,1,1,1,1
+access_task_manager,project_mng.task,model_project_mng_task,base.group_erp_manager,1,1,1,1
