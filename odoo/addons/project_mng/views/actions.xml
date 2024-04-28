@@ -10,7 +10,7 @@
         <record id="employee_menu_action" model="ir.actions.act_window">
             <field name="name">Employees</field>
             <field name="res_model">project_mng.employee</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         <record id="report_menu_action" model="ir.actions.act_window">

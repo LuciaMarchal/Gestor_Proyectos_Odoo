@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="resource_view_tree" model="ir.ui.view">
+        <field name="name">resource.view.tree</field>
+        <field name="model">project_mng.resource</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="description" />
+                <field name="type" />
+                <field name="availability" />
+            </tree>
+        </field>
+    </record>
+</odoo>

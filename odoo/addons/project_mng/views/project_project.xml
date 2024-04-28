@@ -92,7 +92,7 @@
                             </page>
                             <page string="Reports">
                                 <field name="report_ids">
-                                    <tree>
+                                    <tree editable="bottom" >
                                         <field name="name" />
                                         <field name="description" />
                                         <field name="file" widget="file" />
@@ -133,7 +133,7 @@
             <field name="model">project_mng.project</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="state" quick_create="false" class="o_kanban_small_column"
-                    sample="1">
+                    sample="1" >
                     <field name="state" />
                     <field name="description" />
                     <field name="initial_date" />
@@ -173,6 +173,16 @@
                     <field name="state" />
                     <field name="id" type="count" />
                 </graph>
+            </field>
+        </record>
+
+        <record id="project_view_pivot" model="ir.ui.view">
+            <field name="name">project.view.pivot</field>
+            <field name="model">project_mng.project</field>
+            <field name="arch" type="xml">
+                <pivot string="" disable_linking="true">
+                    
+                </pivot>
             </field>
         </record>
     </data>
