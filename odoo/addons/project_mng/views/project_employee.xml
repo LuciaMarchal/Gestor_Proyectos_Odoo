@@ -15,4 +15,51 @@
             </tree>
         </field>
     </record>
+
+    <record id="employee_view_kanban" model="ir.ui.view">
+        <field name="name">employee.view.kanban</field>
+        <field name="model">project_mng.employee</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="surnames"/>
+                <field name="job_title" />
+                <field name="department" />
+                <field name="email" />
+                <field name="phone" />
+                <field name="user_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li class="mb4" style="margin-top:25px;">
+                                        <h4>
+                                            <strong>
+                                                <field name="name"/>
+                                                <br/>
+                                                <field name="surnames" />
+                                            </strong>
+                                        </h4>
+                                    </li>
+                                    <li class="mb4" style="margin-top:-5px;">
+                                        <i class="fa fa-envelope" role="img"/> 
+                                        <field name="email"/>
+                                    </li>
+                                    <li class="mb4" style="margin-top:-5px;">
+                                        <i class="fa fa-phone" role="img" /> 
+                                        <field name="phone"/>
+                                    </li>
+                                    <li class="mb4" style="margin-top:-5px;">
+                                        <i class="fa fa-user" role="img"/>
+                                        <field name="department"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 </odoo>
