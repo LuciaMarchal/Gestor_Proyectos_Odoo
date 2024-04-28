@@ -29,6 +29,7 @@
         'views/project_project.xml',
         'views/project_employee.xml',
         'views/project_report.xml',
+        'views/project_resource.xml',
         'views/actions.xml',
         'views/menus.xml',
     ],
