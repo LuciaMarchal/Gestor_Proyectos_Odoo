@@ -224,9 +224,7 @@
         (4, ref('resource_demo_3')),
       ]"
       />
-
     </record>
-
 
     <!-- TASKS -->
     <record id="task_demo_1" model="project_mng.task">
@@ -523,6 +521,37 @@
       <field name="code">report.code</field>
       <field name="prefix">REP</field>
       <field name="padding">3</field>
-      </record>      
+    </record>
+
+    <!-- REPORTS -->
+    <record id="reports_demo_1" model="project_mng.report">
+      <field name="description">Web Application Development.</field>
+      <field name="date">2024-04-12</field>
+      <field name="project_id" ref="project_demo_1" />
+    </record>
+
+    <record id="reports_demo_2" model="project_mng.report">
+      <field name="description">Website Redesign.</field>
+      <field name="date">2024-05-01</field>
+      <field name="project_id" ref="project_demo_2" />
+    </record>
+
+    <record id="reports_demo_3" model="project_mng.report">
+      <field name="description">Mobile App Development.</field>
+      <field name="date">2024-04-15</field>
+      <field name="project_id" ref="project_demo_3" />
+    </record>
+
+    <record id="reports_demo_4" model="project_mng.report">
+      <field name="description">Marketing Campaign.</field>
+      <field name="date">2024-03-01</field>
+      <field name="project_id" ref="project_demo_4" />
+    </record>
+
+    <record id="reports_demo_5" model="project_mng.report">
+      <field name="description">Product Launch.</field>
+      <field name="date">2024-06-01</field>
+      <field name="project_id" ref="project_demo_5" />
+    </record>
   </data>
 </odoo>
