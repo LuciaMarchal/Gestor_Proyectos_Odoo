@@ -19,15 +19,14 @@ class Employee(models.Model):
     department = fields.Char()
     email = fields.Char()
     phone = fields.Char()
-    user_id = fields.Many2one('res.users', string='User', delete="on_cascade")
+    user_id = fields.Many2one('res.users', string='User', ondelete="cascade")
     
     project_id = fields.Many2one('project_mng.project', string='Project')
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
-    @api.model_create_single
-    def create(self, vals):
-        employee = super(Employee, self).create(vals)
+    def action_update_user(self):
+        employee = super(Employee, self).create(self)
 
         user_vals = {
             'name': employee.name,
@@ -39,5 +38,3 @@ class Employee(models.Model):
             'notification_type': 'inbox'
         }
         self.env['res.users'].create(user_vals)
-
-        return employee
