@@ -64,7 +64,7 @@
     </record>
     <record id="employee_action_server" model="ir.actions.server">
         <field name="name">Employee Action</field>
-        <field name="model_id" ref="project_mng.employee"/>
+        <field name="model_id" ref="model_project_mng_project"/>
         <field name="state">code</field>
         <field name="code">action = action_update_user()</field>
     </record>

@@ -1,4 +1,4 @@
-from odoo import models, fields, _
+from odoo import models, fields, _, api
 
 class Employee(models.Model):
     _name = 'project_mng.employee'
@@ -25,7 +25,8 @@ class Employee(models.Model):
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
-    def action_update_user(self):
+    @api.onchange('email', 'name', 'surname')
+    def _onchange_user(self):
         user = self.env['res.users'].search([('login', '=', self.email)])
         
         if user:
@@ -33,17 +34,24 @@ class Employee(models.Model):
                 {"name": self.name},
                 {"login": self.email},
             )
-        else:
-            user_vals = {
-                'name': self.name,
-                'login': self.email,
-                'password': 'contrasena', 
-                'groups_id': [(6, 0, [
-                    self.env.ref('base.group_user').id
-                ])],
-                'notification_type': 'inbox'
-            }
-            self.env['res.users'].create(user_vals)
+            
+    @api.model
+    def create(self, values):
+        res = super(Employee, self).create(values)
+
+        values = {
+            'name': self.name,
+            'login': self.email,
+            'password': 'contrasena', 
+            'groups_id': [(6, 0, [
+                self.env.ref('base.group_user').id
+            ])],
+        }
+        self.env['res.users'].create(values)
+        return res
+    
+    def action_update_user(self):
+        pass
         # return {
         #     "type": "ir.action.client",
         #     "name": _("Employees"),
