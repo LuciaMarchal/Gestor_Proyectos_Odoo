@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, _
 
 class Employee(models.Model):
     _name = 'project_mng.employee'
@@ -26,15 +26,27 @@ class Employee(models.Model):
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
     def action_update_user(self):
-        employee = super(Employee, self).create(self)
-
-        user_vals = {
-            'name': employee.name,
-            'login': employee.email,
-            'password': 'contrasena', 
-            'groups_id': [(6, 0, [
-                self.env.ref('base.group_user').id
-            ])],
-            'notification_type': 'inbox'
-        }
-        self.env['res.users'].create(user_vals)
+        user = self.env['res.users'].search([('login', '=', self.email)])
+        
+        if user:
+            user.write(
+                {"name": self.name},
+                {"login": self.email},
+            )
+        else:
+            user_vals = {
+                'name': self.name,
+                'login': self.email,
+                'password': 'contrasena', 
+                'groups_id': [(6, 0, [
+                    self.env.ref('base.group_user').id
+                ])],
+                'notification_type': 'inbox'
+            }
+            self.env['res.users'].create(user_vals)
+        # return {
+        #     "type": "ir.action.client",
+        #     "name": _("Employees"),
+        #     "conext": self.env.context,
+        #     "model": "res.users",
+        # }
