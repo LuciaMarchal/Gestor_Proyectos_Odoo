@@ -19,42 +19,35 @@ class Employee(models.Model):
     department = fields.Char()
     email = fields.Char()
     phone = fields.Char()
-    user_id = fields.Many2one('res.users', string='User', ondelete="cascade")
+    user_id = fields.Many2one('res.users', string='User')
     
     project_id = fields.Many2one('project_mng.project', string='Project')
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
-    @api.onchange('email', 'name', 'surname')
+    @api.onchange('email', 'name', 'surnames')
     def _onchange_user(self):
-        user = self.env['res.users'].search([('login', '=', self.email)])
-        
-        if user:
-            user.write(
-                {"name": self.name},
-                {"login": self.email},
-            )
+        if self.email:
+            user = self.env['res.users'].search([('login', '=', self.email)])
+            if user:
+                user.write({
+                    "name": self.name + " " + self.surnames,
+                    "login": self.email,
+                })
             
     @api.model
     def create(self, values):
-        res = super(Employee, self).create(values)
-
-        values = {
-            'name': self.name,
-            'login': self.email,
-            'password': 'contrasena', 
-            'groups_id': [(6, 0, [
-                self.env.ref('base.group_user').id
-            ])],
-        }
-        self.env['res.users'].create(values)
-        return res
+        employee = super(Employee, self).create(values)
+        user = self.env['res.users'].search([('login', '=', values.get('email'))], limit=1)
+        if user:
+            values['user_id'] = user.id
+        else:
+            user_values = {
+                'name': values.get('name'),
+                'login': values.get('email'),
+                'password': 'contrasena', 
+                'groups_id': [(6, 0, [self.env.ref('base.group_user').id])],
+            }
+            self.env['res.users'].create(user_values)
+        return employee
     
-    def action_update_user(self):
-        pass
-        # return {
-        #     "type": "ir.action.client",
-        #     "name": _("Employees"),
-        #     "conext": self.env.context,
-        #     "model": "res.users",
-        # }
