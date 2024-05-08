@@ -43,15 +43,15 @@
                                         </h4>
                                     </li>
                                     <li class="mb4" style="margin-top:-5px;">
-                                        <i class="fa fa-envelope" role="img"/> 
+                                        <i class="fa fa-envelope" title="Email" role="img"/> 
                                         <field name="email"/>
                                     </li>
                                     <li class="mb4" style="margin-top:-5px;">
-                                        <i class="fa fa-phone" role="img" /> 
+                                        <i class="fa fa-phone" title="Phone" role="img" /> 
                                         <field name="phone"/>
                                     </li>
                                     <li class="mb4" style="margin-top:-5px;">
-                                        <i class="fa fa-user" role="img"/>
+                                        <i class="fa fa-user" title="User" role="img"/>
                                         <field name="department"/>
                                     </li>
                                 </ul>
