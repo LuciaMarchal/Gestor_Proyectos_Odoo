@@ -21,10 +21,9 @@
                 <sheet>
                     <group>
                         <field name="name" />
-                        <field name="description" />
+                        <field name="project_id" />
                         <field name="file" widget="file" />
                         <field name="date" />
-                        <field name="project_id" />
                     </group>
                 </sheet>
             </form>
@@ -50,15 +49,39 @@
                             <strong>Name:</strong>
                             <span t-field="report.name" />
                             <br></br>
-                            <strong>Description:</strong>
-                            <span t-field="report.description" />
-                        </div>
-                        <div name="project_info">
                             <strong>Project:</strong>
                             <span t-field="report.project_id" />
                             <br></br>
                             <strong>Generation date:</strong>
                             <span t-field="report.date" />
+                        </div>
+                        <div>
+                            <strong>Initial Date:</strong>
+                            <span t-field="report.project_id.initial_date" />
+                            <br />
+                            <strong>Final Date:</strong>
+                            <span t-field="report.project_id.final_date" />
+                            <br />
+                            <strong>Workers:</strong>
+                            <ul>
+                                <t t-foreach="report.project_id.worker_ids" t-as="worker">
+                                    <li>
+                                        <span t-field="worker.name" />
+                                    </li>
+                                </t>
+                            </ul>
+                            <strong>State:</strong>
+                            <span t-field="report.project_id.state" />
+                        </div>
+                        <div>
+                            <strong>Tasks:</strong>
+                            <ul>
+                                <t t-foreach="report.project_id.task_ids" t-as="task">
+                                    <li>
+                                        <span t-field="task.name" /> - <span t-field="task.state" />
+                                    </li>
+                                </t>
+                            </ul>
                         </div>
                     </div>
                 </t>

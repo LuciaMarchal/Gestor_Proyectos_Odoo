@@ -6,7 +6,6 @@ class Report(models.Model):
     _description = 'Report model'
 
     name = fields.Char(readonly=True)
-    description = fields.Text()
     file = fields.Binary()
     date = fields.Date(default=datetime.today(), readonly=True)
     project_id = fields.Many2one('project_mng.project', string='Project')
