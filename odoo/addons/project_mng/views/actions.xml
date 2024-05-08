@@ -4,7 +4,7 @@
         <record id="project_menu_action" model="ir.actions.act_window">
             <field name="name">Projects</field>
             <field name="res_model">project_mng.project</field>
-            <field name="view_mode">tree,form,calendar,kanban,graph</field>
+            <field name="view_mode">tree,form,calendar,kanban</field>
         </record>
 
         <record id="employee_menu_action" model="ir.actions.act_window">
@@ -18,5 +18,12 @@
             <field name="res_model">project_mng.report</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <record id="project_menu_analysis" model="ir.actions.act_window">
+            <field name="name">Project Graph</field>
+            <field name="res_model">project_mng.project</field>
+            <field name="view_mode">graph,pivot</field>
+        </record>
+
     </data>
 </odoo>

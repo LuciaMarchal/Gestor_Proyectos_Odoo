@@ -24,6 +24,13 @@
       name="Reports"
       action="report_menu_action"
       parent="project_parent_menu"
+      sequence="4" />
+
+    <menuitem
+      id="analysis_menu"
+      name="Analysis"
+      action="project_menu_analysis"
+      parent="project_parent_menu"
       sequence="3" />
   </data>
 </odoo>
