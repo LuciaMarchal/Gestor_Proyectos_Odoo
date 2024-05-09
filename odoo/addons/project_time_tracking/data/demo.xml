@@ -1,0 +1,158 @@
+<odoo>
+    <data noupdate="1">
+        <record id="resource_demo_1" model="project_mng.resource">
+            <field name="description">Meeting Room 1</field>
+            <field name="type">other</field>
+            <field name="availability">10</field>      
+          </record>
+          
+          <record id="resource_demo_2" model="project_mng.resource">
+            <field name="description">Projector</field>
+            <field name="type">other</field>
+            <field name="availability">1</field>      
+          </record>
+          
+        <record id="worker_demo_11" model="project_mng.employee">
+            <field name="name">Alex</field>
+            <field name="surnames">Johnson</field>
+            <field name="job_title">developer</field>
+            <field name="department">IT</field>
+            <field name="email">alex.johnson@example.com</field>
+            <field name="phone">601234567</field>
+        </record>
+
+        <record id="worker_demo_12" model="project_mng.employee">
+            <field name="name">Sophia</field>
+            <field name="surnames">Brown</field>
+            <field name="job_title">designer</field>
+            <field name="department">Creative</field>
+            <field name="email">sophia.brown@example.com</field>
+            <field name="phone">601234567</field>
+        </record>
+
+        <record id="worker_demo_13" model="project_mng.employee">
+            <field name="name">Ethan</field>
+            <field name="surnames">Garcia</field>
+            <field name="job_title">tester</field>
+            <field name="department">QA</field>
+            <field name="email">ethan.garcia@example.com</field>
+            <field name="phone">601234567</field>
+        </record>
+
+        <record id="worker_demo_14" model="project_mng.employee">
+            <field name="name">Ava</field>
+            <field name="surnames">Martinez</field>
+            <field name="job_title">admin</field>
+            <field name="department">Administration</field>
+            <field name="email">ava.martinez@example.com</field>
+            <field name="phone">601234567</field>
+        </record>
+
+        <record id="project_demo_1" model="project_mng.project">
+            <field name="name">E-commerce Integration</field>
+            <field name="description">Integrating the company's website with an e-commerce platform
+                for online sales.</field>
+            <field name="initial_date">2024-09-01</field>
+            <field name="final_date">2024-12-31</field>
+            <field
+                name="worker_ids"
+                eval="[
+                (4, ref('worker_demo_11')),
+                (4, ref('worker_demo_12')),
+              ]" />
+            <field name="color">4</field>
+            <field name="state">to_do</field>
+            <field
+                name="resource_ids"
+                eval="[
+                    (4, ref('resource_demo_1')),
+                    (4, ref('resource_demo_2')),
+                ]"
+            />
+        </record>
+
+        <record id="project_demo_2" model="project_mng.project">
+            <field name="name">Customer Relationship Management (CRM) Implementation</field>
+            <field name="description">Implementing a CRM system to manage customer interactions and
+                improve sales processes.</field>
+            <field name="initial_date">2024-10-01</field>
+            <field name="final_date">2025-03-31</field>
+            <field
+                name="worker_ids"
+                eval="[
+              (4, ref('worker_demo_11')),
+              (4, ref('worker_demo_12')),
+            ]" />
+            <field name="color">4</field>
+            <field name="state">to_do</field>
+            <field
+                name="resource_ids"
+                eval="[
+                (4, ref('resource_demo_2')),
+                (4, ref('resource_demo_1')),
+            ]"
+            />
+        </record>
+
+        <record model="project_time_tracking.project_time_tracking" id="time_tracking_demo_1">
+            <field name="name">Time Tracking Record 1</field>
+            <field name="task_id" ref="task_demo_1" />
+            <field name="project_id" ref="project_demo_1" />
+            <field name="start_time">2024-04-10 08:00:00</field>
+            <field name="end_time">2024-04-10 10:00:00</field>
+        </record>
+
+        <record model="project_time_tracking.project_time_tracking" id="time_tracking_demo_2">
+            <field name="name">Time Tracking Record 2</field>
+            <field name="task_id" ref="task_demo_2" />
+            <field name="project_id" ref="project_demo_2" />
+            <field name="start_time">2024-04-15 09:00:00</field>
+            <field name="end_time">2024-04-15 10:00:00</field>
+        </record>
+
+        <record id="task_demo_1" model="project_mng.task">
+            <field name="name">Create Homepage Layout</field>
+            <field name="description">Design the layout for the homepage of the website.</field>
+            <field name="initial_date">2024-04-13</field>
+            <field name="state">to_do</field>
+            <field name="worker_id" ref="worker_demo_11" />
+            <field name="project_id" ref="project_demo_1" />
+            <field name="comment">Ensure it's user-friendly and visually appealing.</field>
+            <field name="priority">2</field>
+        </record>
+        
+        <record id="task_demo_2" model="project_mng.task">
+            <field name="name">Implement Shopping Cart Functionality</field>
+            <field name="description">Code the functionality for adding items to a shopping cart.</field>
+            <field name="initial_date">2024-04-15</field>
+            <field name="state">to_do</field>
+            <field name="worker_id" ref="worker_demo_13" />
+            <field name="project_id" ref="project_demo_2" />
+            <field name="comment">Test thoroughly to ensure accuracy.</field>
+            <field name="priority">1</field>
+        </record>
+        
+        <record id="task_demo_3" model="project_mng.task">
+            <field name="name">Configure Email Notification System</field>
+            <field name="description">Set up automated email notifications for order confirmations.</field>
+            <field name="initial_date">2024-04-17</field>
+            <field name="state">to_do</field>
+            <field name="worker_id" ref="worker_demo_11" />
+            <field name="project_id" ref="project_demo_1" />
+            <field name="comment">Make sure emails are sent promptly and contain correct information.</field>
+            <field name="priority">3</field>
+        </record>
+        
+        <record id="task_demo_4" model="project_mng.task">
+            <field name="name">Create Customer Database</field>
+            <field name="description">Develop a database to store customer information securely.</field>
+            <field name="initial_date">2024-04-20</field>
+            <field name="state">to_do</field>
+            <field name="worker_id" ref="worker_demo_13" />
+            <field name="project_id" ref="project_demo_2" />
+            <field name="comment">Ensure compliance with data protection regulations.</field>
+            <field name="priority">2</field>
+        </record>
+        
+    </data>
+</odoo>
