@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <menuitem
+            id="time_tracking_menu"
+            name="Time Tracking"
+            action="project_menu_time_tracking"
+            parent="project_mng.project_parent_menu"
+            sequence="5" />
+    </data>
+</odoo>
