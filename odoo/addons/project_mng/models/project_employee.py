@@ -4,8 +4,8 @@ class Employee(models.Model):
     _name = 'project_mng.employee'
     _description = 'Employee model'
 
-    name = fields.Char()
-    surnames = fields.Char()
+    name = fields.Char(required=True)
+    surnames = fields.Char(required=True)
     job_title = fields.Selection([
         ('manager', 'Project Manager'),
         ('leader', 'Team Leader'),
@@ -15,9 +15,9 @@ class Employee(models.Model):
         ('admin', 'Administrator'),
         ('db_admin', 'Database Administrator'),
         ('intern', 'Intern'),
-    ])
+    ], required=True)
     department = fields.Char()
-    email = fields.Char()
+    email = fields.Char(required=True)
     phone = fields.Char()
     user_id = fields.Many2one('res.users', string='User')
     

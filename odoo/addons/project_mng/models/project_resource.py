@@ -10,8 +10,8 @@ class Resource(models.Model):
         ('human_resources', 'Human Resources'),
         ('materials', 'Materials'),
         ('financial', 'Financial'),
-    ])
-    availability = fields.Integer()
+    ], required=True)
+    availability = fields.Integer(required=True)
     
     def _compute_name(self):
         for resource in self:

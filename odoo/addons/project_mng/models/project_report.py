@@ -8,7 +8,7 @@ class Report(models.Model):
     name = fields.Char(readonly=True)
     file = fields.Binary()
     date = fields.Date(default=datetime.today(), readonly=True)
-    project_id = fields.Many2one('project_mng.project', string='Project')
+    project_id = fields.Many2one('project_mng.project', string='Project', required=True)
     
     @api.model
     def create(self, vals):

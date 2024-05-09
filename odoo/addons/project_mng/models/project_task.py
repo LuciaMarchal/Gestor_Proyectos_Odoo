@@ -5,8 +5,8 @@ class Task(models.Model):
     _name = 'project_mng.task'
     _description = 'Task model'
     
-    name = fields.Char()
-    description = fields.Text()
+    name = fields.Char(required=True)
+    description = fields.Text(required=True)
     initial_date = fields.Date(default=datetime.today(), readonly=True)
     final_date = fields.Date()
     state = fields.Selection([
@@ -17,7 +17,7 @@ class Task(models.Model):
         ('done', 'Done'),
         ('closed', 'Closed'),
         ('canceled', 'Canceled')
-    ], default="to_do")
+    ], default="to_do", required=True)
     worker_id = fields.Many2one('project_mng.employee', string='Worker')
     project_id = fields.Many2one('project_mng.project', string='Project')
     comment = fields.Text()
