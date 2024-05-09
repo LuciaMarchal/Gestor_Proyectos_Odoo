@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="project_view_form_inherit" model="ir.ui.view">
+            <field name="name">project.view.form.inherit</field>
+            <field name="model">project_mng.project</field>
+            <field name="inherit_id" ref="project_mng.project_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='priority']" position="after">
+                    <field name="total_duration" widget="float_time"/>
+                </xpath>
+
+                <xpath expr="//field[@name='color']" position="after">
+                    <field name="total_duration" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
