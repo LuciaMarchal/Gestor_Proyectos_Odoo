@@ -1,0 +1,9 @@
+<odoo>
+  <data>
+    <record id="project_menu_time_tracking" model="ir.actions.act_window">
+      <field name="name">Time Tracking</field>
+      <field name="res_model">project_time_tracking.project_time_tracking</field>
+      <field name="view_mode">tree</field>
+    </record>
+  </data>
+</odoo>
