@@ -95,7 +95,6 @@
                                 <field name="report_ids">
                                     <tree editable="bottom">
                                         <field name="name" />
-                                        <field name="description" />
                                         <field name="file" widget="file" />
                                         <field name="date" />
                                     </tree>

@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="name" />
-                <field name="description" />
                 <field name="date" />
                 <field name="project_id" />
             </tree>
