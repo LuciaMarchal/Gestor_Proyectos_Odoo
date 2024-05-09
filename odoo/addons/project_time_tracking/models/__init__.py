@@ -1,3 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+from . import time_tracking
+from . import project_project
+from . import project_task
