@@ -19,8 +19,11 @@
     'depends': ['project_mng'],
 
     'data': [
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/time_tracking.xml',
+        'views/project_project.xml',
+        'views/actions.xml',
+        'views/menus.xml',
     ],
 
     'demo': [
