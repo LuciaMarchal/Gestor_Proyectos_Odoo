@@ -10,6 +10,7 @@ class Resource(models.Model):
         ('human_resources', 'Human Resources'),
         ('materials', 'Materials'),
         ('financial', 'Financial'),
+        ('other', 'Other'),
     ], required=True)
     availability = fields.Integer(required=True)
     
