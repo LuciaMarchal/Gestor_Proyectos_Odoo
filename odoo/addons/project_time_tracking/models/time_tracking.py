@@ -26,7 +26,7 @@ class TimeTracking(models.Model):
     def _onchange_project_id(self):
         if self.project_id:
             return {'domain': {'task_id': [('project_id', '=', self.project_id.id)]}}
-
+    
     @api.onchange('task_id')
     def _onchange_task_id(self):
         if self.task_id:
