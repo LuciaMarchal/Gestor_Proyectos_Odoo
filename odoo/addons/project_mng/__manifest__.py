@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "project_mng",
+    'name': "Project Management",
 
     'summary': """
         Permite a los usuarios crear y gestionar proyectos dentro de la plataforma Odoo.
