@@ -19,6 +19,7 @@
     'depends': ['project_mng'],
 
     'data': [
+        'data/demo.xml',
         'security/ir.model.access.csv',
         'views/time_tracking.xml',
         'views/project_project.xml',
@@ -27,7 +28,7 @@
     ],
 
     'demo': [
-        'demo/demo.xml',
+        'data/demo.xml',
     ],
     
     'application': False,
