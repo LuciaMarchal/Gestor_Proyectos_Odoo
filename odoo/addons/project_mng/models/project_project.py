@@ -1,5 +1,4 @@
-from odoo import models, fields
-from time import time
+from odoo import models, fields, api
 
 class Project(models.Model):
     _name = 'project_mng.project'
@@ -9,7 +8,7 @@ class Project(models.Model):
     description = fields.Text(required=True)
     initial_date = fields.Date(required=True)
     final_date = fields.Date(required=True)
-    worker_ids = fields.Many2many('project_mng.employee', 'project_id', string='Workers')
+    worker_ids = fields.Many2many('project_mng.employee', 'project_id', string='Workers', compute="_compute_worker_ids")
     color = fields.Integer()
     state = fields.Selection([
         ('first_impressions', 'First impressions'),
@@ -46,3 +45,9 @@ class Project(models.Model):
     def action_cancel(self):
         for project in self:
             project.state = "canceled"
+                
+    @api.depends('task_ids.worker_id')
+    def _compute_worker_ids(self):
+        for project in self:
+            workers = project.task_ids.mapped('worker_id')
+            project.worker_ids = workers
