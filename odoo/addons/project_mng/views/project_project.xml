@@ -53,7 +53,7 @@
                                         <field name="surnames" />
                                         <field name="job_title" />
                                         <field name="department" />
-                                        <field name="email" widget="email" />
+                                        <field name="email" />
                                         <field name="phone" />
                                     </tree>
                                 </field>
