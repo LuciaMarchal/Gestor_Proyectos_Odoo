@@ -94,21 +94,6 @@
             />
         </record>
 
-        <record model="project_time_tracking.project_time_tracking" id="time_tracking_demo_1">
-            <field name="name">Time Tracking Record 1</field>
-            <field name="task_id" ref="task_demo_1" />
-            <field name="project_id" ref="project_demo_1" />
-            <field name="start_time">2024-04-10 08:00:00</field>
-            <field name="end_time">2024-04-10 10:00:00</field>
-        </record>
-
-        <record model="project_time_tracking.project_time_tracking" id="time_tracking_demo_2">
-            <field name="name">Time Tracking Record 2</field>
-            <field name="task_id" ref="task_demo_2" />
-            <field name="project_id" ref="project_demo_2" />
-            <field name="start_time">2024-04-15 09:00:00</field>
-            <field name="end_time">2024-04-15 10:00:00</field>
-        </record>
 
         <record id="task_demo_1" model="project_mng.task">
             <field name="name">Create Homepage Layout</field>
@@ -154,5 +139,21 @@
             <field name="priority">2</field>
         </record>
         
+        <record model="project_time_tracking.project_time_tracking" id="time_tracking_demo_1">
+            <field name="name">Time Tracking Record 1</field>
+            <field name="task_id" ref="task_demo_1" />
+            <field name="project_id" ref="project_demo_1" />
+            <field name="start_time">2024-04-10 08:00:00</field>
+            <field name="end_time">2024-04-10 10:00:00</field>
+        </record>
+
+        <record model="project_time_tracking.project_time_tracking" id="time_tracking_demo_2">
+            <field name="name">Time Tracking Record 2</field>
+            <field name="task_id" ref="task_demo_2" />
+            <field name="project_id" ref="project_demo_2" />
+            <field name="start_time">2024-04-15 09:00:00</field>
+            <field name="end_time">2024-04-15 10:00:00</field>
+        </record>
+
     </data>
 </odoo>
