@@ -7,7 +7,7 @@ class TimeTracking(models.Model):
     
     name = fields.Char(required=True)
     task_id = fields.Many2one('project_mng.task', string='Task', required=True)
-    employee_id = fields.Many2one('project_mng.employee', default=lambda self: self.env.user.id, readonly=True)
+    user_id = fields.Many2one('res.users', string='Employee', default=lambda self: self.env.user.id, readonly=True)
     start_time = fields.Datetime(default=datetime.now(), required=True)
     end_time = fields.Datetime()
     duration = fields.Float(compute='_compute_duration', store=True)
