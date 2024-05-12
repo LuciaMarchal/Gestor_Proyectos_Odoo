@@ -118,12 +118,6 @@
       <field name="description">Project to develop a task management web application.</field>
       <field name="initial_date">2024-04-12</field>
       <field name="final_date">2024-11-23</field>
-      <field
-        name="worker_ids"
-        eval="[
-          (4, ref('worker_demo_1')),
-          (4, ref('worker_demo_2')),
-        ]" />
       <field name="color">2</field>
       <field name="state">first_impressions</field>
       <field
@@ -140,12 +134,6 @@
       <field name="description">Redesigning the company website to improve user experience and modernize the design.</field>
       <field name="initial_date">2024-05-01</field>
       <field name="final_date">2024-07-01</field>
-      <field
-        name="worker_ids"
-        eval="[
-          (4, ref('worker_demo_6')),
-          (4, ref('worker_demo_7')),
-        ]" />
       <field name="color">5</field>
       <field name="state">to_do</field>
       <field
@@ -162,12 +150,6 @@
       <field name="description">Developing a new mobile application for iOS and Android platforms to expand the company's reach.</field>
       <field name="initial_date">2024-04-15</field>
       <field name="final_date">2024-09-30</field>
-      <field
-        name="worker_ids"
-        eval="[
-        (4, ref('worker_demo_9')),
-        (4, ref('worker_demo_10')),
-      ]" />
       <field name="color">7</field>
       <field name="state">doing</field>
       <field
@@ -186,12 +168,6 @@
       <field name="description">Planning and executing a comprehensive marketing campaign to increase brand awareness and attract new customers.</field>
       <field name="initial_date">2024-03-01</field>
       <field name="final_date">2024-06-30</field>
-      <field
-        name="worker_ids"
-        eval="[
-          (4, ref('worker_demo_8')),
-          (4, ref('worker_demo_3')),
-        ]" />
       <field name="color">3</field>
       <field name="state">testing</field>
       <field
@@ -208,12 +184,6 @@
       <field name="description">Launching a new product line in the market with a focus on innovative features and customer satisfaction.</field>
       <field name="initial_date">2024-06-01</field>
       <field name="final_date">2024-08-31</field>
-      <field
-        name="worker_ids"
-        eval="[
-          (4, ref('worker_demo_4')),
-          (4, ref('worker_demo_5')),
-        ]" />
       <field name="color">8</field>
       <field name="state">to_do</field>
       <field
