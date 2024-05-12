@@ -5,7 +5,7 @@ class Task(models.Model):
     _inherit = 'project_mng.task'
     
     time_tracking_ids = fields.One2many('project_time_tracking.project_time_tracking', 'task_id')
-    total_duration = fields.Float(compute='_compute_total_duration')
+    total_duration = fields.Float(compute='_compute_total_duration', store=True)
     
     def _compute_total_duration(self):
         for record in self:
