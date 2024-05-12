@@ -180,7 +180,7 @@
             <field name="name">project_view_pivot</field>
             <field name="model">project_mng.project</field>
             <field name="arch" type="xml">
-                <pivot string="Project State Pivot">
+                <pivot string="Project State Pivot" disable_linking="True">
                     <field name="state" type="row" string="State" />
                     <field name="worker_ids" type="col" string="Workers"/>
                 </pivot>
