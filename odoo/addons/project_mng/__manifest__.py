@@ -19,8 +19,9 @@
     'depends': ['base'],
 
     'data': [
-        'data/demo.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
+        'data/demo.xml',
         'views/project_project.xml',
         'views/project_employee.xml',
         'views/project_report.xml',
