@@ -21,7 +21,6 @@ class Employee(models.Model):
     phone = fields.Char()
     user_id = fields.Many2one('res.users', string='User')
     
-    project_id = fields.Many2one('project_mng.project', string='Project')
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
