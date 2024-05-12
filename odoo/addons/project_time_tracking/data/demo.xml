@@ -53,12 +53,6 @@
             <field name="description">Integrating the company's website with an e-commerce platform for online sales.</field>
             <field name="initial_date">2024-09-01</field>
             <field name="final_date">2024-12-31</field>
-            <field
-                name="worker_ids"
-                eval="[
-                (4, ref('worker_demo_11')),
-                (4, ref('worker_demo_12')),
-              ]" />
             <field name="color">4</field>
             <field name="state">to_do</field>
             <field
@@ -75,12 +69,6 @@
             <field name="description">Implementing a CRM system to manage customer interactions and improve sales processes.</field>
             <field name="initial_date">2024-10-01</field>
             <field name="final_date">2025-03-31</field>
-            <field
-                name="worker_ids"
-                eval="[
-              (4, ref('worker_demo_11')),
-              (4, ref('worker_demo_12')),
-            ]" />
             <field name="color">4</field>
             <field name="state">to_do</field>
             <field
