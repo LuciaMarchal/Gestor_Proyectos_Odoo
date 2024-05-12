@@ -25,7 +25,7 @@ class Employee(models.Model):
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
-    @api.onchange('name', 'surnames', 'email')
+    @api.onchange('name', 'surnames')
     def _onchange_employee(self):
         for record in self:
             if record.email:
