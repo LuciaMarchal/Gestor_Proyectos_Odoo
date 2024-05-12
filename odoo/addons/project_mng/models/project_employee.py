@@ -15,7 +15,7 @@ class Employee(models.Model):
         ('admin', 'Administrator'),
         ('db_admin', 'Database Administrator'),
         ('intern', 'Intern'),
-    ], required=True)
+    ])
     department = fields.Char()
     email = fields.Char(required=True)
     phone = fields.Char()
@@ -25,15 +25,15 @@ class Employee(models.Model):
     message_ids = fields.One2many('project_mng.message', 'user_id', string='Messages')
     task_ids = fields.One2many('project_mng.task', 'worker_id', string='Tasks')
     
-    @api.onchange('email', 'name', 'surnames')
-    def _onchange_user(self):
-        if self.email:
-            user = self.env['res.users'].search([('login', '=', self.email)])
-            if user:
-                user.write({
-                    "name": self.name + " " + self.surnames,
-                    "login": self.email,
-                })
+    @api.onchange('name', 'surnames', 'email')
+    def _onchange_employee(self):
+        for record in self:
+            if record.email:
+                user = self.env['res.users'].search([('login', '=', self.email)], limit=1)
+                if user:
+                    user.write({
+                        "name": record.name + " " + record.surnames,
+                    })
             
     @api.model
     def create(self, values):
@@ -43,7 +43,7 @@ class Employee(models.Model):
             values['user_id'] = user.id
         else:
             user_values = {
-                'name': values.get('name'),
+                'name': values.get('name') + " " + values.get('surnames'),
                 'login': values.get('email'),
                 'password': 'contrasena', 
                 'groups_id': [(6, 0, [self.env.ref('base.group_user').id])],
