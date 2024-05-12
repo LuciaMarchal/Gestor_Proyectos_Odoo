@@ -11,7 +11,6 @@
                 <field name="phone" widget="phone"/>
                 <field name="job_title" />
                 <field name="department" />
-                <field name="project_id" />
             </tree>
         </field>
     </record>
