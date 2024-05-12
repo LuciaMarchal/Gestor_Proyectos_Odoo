@@ -8,7 +8,7 @@ class Project(models.Model):
     description = fields.Text(required=True)
     initial_date = fields.Date(required=True)
     final_date = fields.Date(required=True)
-    worker_ids = fields.Many2many('project_mng.employee', 'project_id', string='Workers', compute="_compute_worker_ids")
+    worker_ids = fields.Many2many('project_mng.employee', string='Workers', compute="_compute_worker_ids", store=True)
     color = fields.Integer()
     state = fields.Selection([
         ('first_impressions', 'First impressions'),
