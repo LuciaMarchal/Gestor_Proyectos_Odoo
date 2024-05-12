@@ -1,5 +1,4 @@
 from odoo import models, fields
-from time import time
 
 class Project(models.Model):
     _inherit = 'project_mng.project'
