@@ -50,8 +50,7 @@
 
         <record id="project_demo_1" model="project_mng.project">
             <field name="name">E-commerce Integration</field>
-            <field name="description">Integrating the company's website with an e-commerce platform
-                for online sales.</field>
+            <field name="description">Integrating the company's website with an e-commerce platform for online sales.</field>
             <field name="initial_date">2024-09-01</field>
             <field name="final_date">2024-12-31</field>
             <field
@@ -73,8 +72,7 @@
 
         <record id="project_demo_2" model="project_mng.project">
             <field name="name">Customer Relationship Management (CRM) Implementation</field>
-            <field name="description">Implementing a CRM system to manage customer interactions and
-                improve sales processes.</field>
+            <field name="description">Implementing a CRM system to manage customer interactions and improve sales processes.</field>
             <field name="initial_date">2024-10-01</field>
             <field name="final_date">2025-03-31</field>
             <field
