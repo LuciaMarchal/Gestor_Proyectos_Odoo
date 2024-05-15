@@ -26,13 +26,12 @@ class Employee(models.Model):
     
     @api.onchange('name', 'surnames')
     def _onchange_employee(self):
-        for record in self:
-            if record.email:
-                user = self.env['res.users'].search([('login', '=', self.email)], limit=1)
-                if user:
-                    user.write({
-                        "name": record.name + " " + record.surnames,
-                    })
+        for record in self.filtered(lambda l: l.email):
+            user = self.env['res.users'].search([('login', '=', self.email)], limit=1)
+            if user:
+                user.write({
+                    "name": record.name + " " + record.surnames,
+                })
             
     @api.model
     def create(self, values):
