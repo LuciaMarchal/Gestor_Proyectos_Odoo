@@ -20,6 +20,7 @@ class Project(models.Model):
         ('closed', 'Closed'),
         ('canceled', 'Canceled')
     ], default="first_impressions")
+    is_favorite = fields.Boolean()
     
     task_ids = fields.One2many('project_mng.task', 'project_id', string='tasks')
     document_ids = fields.One2many('project_mng.document', 'project_id', string='Documents')
