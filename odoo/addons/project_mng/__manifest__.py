@@ -19,7 +19,7 @@
     'depends': ['base'],
 
     'data': [
-        'security/security.xml',
+        'security/groups.xml',
         'security/ir.model.access.csv',
         'data/demo.xml',
         'views/project_project.xml',
