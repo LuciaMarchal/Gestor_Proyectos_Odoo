@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class TimeTracking(models.Model):
     _name = 'project_time_tracking.project_time_tracking'
@@ -8,7 +8,7 @@ class TimeTracking(models.Model):
     name = fields.Char(required=True)
     task_id = fields.Many2one('project_mng.task', string='Task', required=True)
     user_id = fields.Many2one('res.users', string='Employee', default=lambda self: self.env.user.id, readonly=True)
-    start_time = fields.Datetime(default=datetime.now(), required=True)
+    start_time = fields.Datetime(default=fields.Datetime.now, required=True)
     end_time = fields.Datetime()
     duration = fields.Float(compute='_compute_duration', store=True)
     project_id = fields.Many2one('project_mng.project', required=True)
@@ -21,7 +21,7 @@ class TimeTracking(models.Model):
                 record.duration = delta.total_seconds() / 3600.0
             else:
                 record.duration = 0.0
-                
+    
     @api.onchange('project_id')
     def _onchange_project_id(self):
         if self.project_id:
