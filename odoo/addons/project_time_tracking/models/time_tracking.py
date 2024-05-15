@@ -31,3 +31,24 @@ class TimeTracking(models.Model):
     def _onchange_task_id(self):
         if self.task_id:
             self.project_id = self.task_id.project_id.id
+
+    @api.model
+    def create(self, vals):
+        record = super(TimeTracking, self).create(vals)
+        if record.task_id:
+            record.task_id._compute_total_duration()
+        return record
+    
+    def write(self, vals):
+        result = super(TimeTracking, self).write(vals)
+        for record in self:
+            if record.task_id:
+                record.task_id._compute_total_duration()
+        return result
+    
+    def unlink(self):
+        tasks = self.mapped('task_id')
+        result = super(TimeTracking, self).unlink()
+        for task in tasks:
+            task._compute_total_duration()
+        return result
