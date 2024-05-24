@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_time_tracking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20240126\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-24 17:09+0000\n"
+"PO-Revision-Date: 2024-05-24 19:11+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__user_id
+msgid "Employee"
+msgstr "Trabajador"
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__end_time
+msgid "End Time"
+msgstr "Hora de Terminar"
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__id
+msgid "ID"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: project_time_tracking
+#: model:ir.model,name:project_time_tracking.model_project_mng_project
+msgid "Project model"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__start_time
+msgid "Start Time"
+msgstr "Hora de Empiece"
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__task_id
+msgid "Task"
+msgstr "Tarea"
+
+#. module: project_time_tracking
+#: model:ir.model,name:project_time_tracking.model_project_mng_task
+msgid "Task model"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.actions.act_window,name:project_time_tracking.project_menu_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_mng_task__time_tracking_ids
+#: model:ir.ui.menu,name:project_time_tracking.time_tracking_menu
+msgid "Time Tracking"
+msgstr "Seguimiento del Tiempo"
+
+#. module: project_time_tracking
+#: model:ir.model,name:project_time_tracking.model_project_time_tracking_project_time_tracking
+msgid "Time Tracking model"
+msgstr ""
+
+#. module: project_time_tracking
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_mng_project__total_duration
+#: model:ir.model.fields,field_description:project_time_tracking.field_project_mng_task__total_duration
+msgid "Total Duration"
+msgstr "Duración Total"
