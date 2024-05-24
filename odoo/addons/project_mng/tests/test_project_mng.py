@@ -1,8 +1,23 @@
-from .common import TestProjectMngCommon
+from odoo.addons.project_mng.common import TestProjectMngCommon
 from datetime import datetime, timedelta
+from odoo.tests.common import TransactionCase
 
-class TestProjectMng(TestProjectMngCommon):
-    #REPORTS
+class TestProjectMng(TransactionCase):
+    @classmethod
+    def setUpClass(cls):
+        super(TestProjectMng, cls).setUpClass()
+        cls.Project = cls.env['project_mng.project']
+        cls.Task = cls.env['project_mng.task']
+        cls.Employee = cls.env['project_mng.employee']
+        cls.User = cls.env['res.users']
+        
+        cls.project = cls.Project.create({
+            'name': 'Test Project',
+        })
+        cls.employee1 = cls.Employee.create({'name': 'Employee 1'})
+        cls.employee2 = cls.Employee.create({'name': 'Employee 2'})
+
+    # REPORTS
     def test_report_creation(self):
         report = self.Report.create({
             'file': b'Test File Content',
@@ -24,7 +39,7 @@ class TestProjectMng(TestProjectMngCommon):
         self.assertTrue(report.name)
         self.assertTrue(report.name.startswith('REP'))  
 
-    #PROJECT
+    # PROJECT
     def test_project_creation(self):
         initial_date = datetime.today().date()
         final_date = initial_date + timedelta(days=30)
@@ -94,7 +109,7 @@ class TestProjectMng(TestProjectMngCommon):
         self.assertIn(self.employee1, project.worker_ids)
         self.assertIn(self.employee2, project.worker_ids)
 
-    #EMPLOYEES
+    # EMPLOYEES
     def test_employee_creation(self):
         employee = self.Employee.create({
             'name': 'John',
