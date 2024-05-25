@@ -67,4 +67,22 @@
         <field name="state">code</field>
         <field name="code">action = action_update_user()</field>
     </record>
+    <record id="employee_view_form" model="ir.ui.view">
+        <field name="name">employee.view.form</field>
+        <field name="model">project_mng.employee</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="surnames" />
+                        <field name="email" widget="email"/>
+                        <field name="phone" widget="phone"/>
+                        <field name="job_title" />
+                        <field name="department" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
