@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0-20240126\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 16:56+0000\n"
-"PO-Revision-Date: 2024-05-24 19:08+0200\n"
+"POT-Creation-Date: 2024-05-25 13:33+0000\n"
+"PO-Revision-Date: 2024-05-25 15:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -112,6 +112,7 @@ msgstr "Cancelar"
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__canceled
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__state__canceled
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Canceled"
 msgstr "Cancelado"
 
@@ -128,6 +129,7 @@ msgstr "Cerrar"
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__closed
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__state__closed
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Closed"
 msgstr "Cerrado"
 
@@ -171,6 +173,7 @@ msgstr "Administrador de Base de Datos"
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_document__date
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_report__date
+#: model_terms:ir.ui.view,arch_db:project_mng.report_view_search
 msgid "Date"
 msgstr "Fecha"
 
@@ -181,6 +184,7 @@ msgstr "Fecha"
 
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_employee__department
+#: model_terms:ir.ui.view,arch_db:project_mng.employee_view_search
 msgid "Department"
 msgstr "Departamento"
 
@@ -216,6 +220,7 @@ msgstr ""
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__displayed
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__state__displayed
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Displayed"
 msgstr "Desplegado"
 
@@ -228,12 +233,14 @@ msgstr "Documentos"
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__doing
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__state__doing
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Doing"
 msgstr ""
 
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__done
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__state__done
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Done"
 msgstr "Terminado"
 
@@ -272,6 +279,7 @@ msgstr "Fichero"
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_project__final_date
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_task__final_date
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Final Date"
 msgstr "Fecha Final"
 
@@ -281,9 +289,21 @@ msgid "Financial"
 msgstr "Financiero"
 
 #. module: project_mng
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
+msgid "First Impressions"
+msgstr "Primeras Impresiones"
+
+#. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__first_impressions
 msgid "First impressions"
 msgstr "Primeras impresiones"
+
+#. module: project_mng
+#: model_terms:ir.ui.view,arch_db:project_mng.employee_view_search
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
+#: model_terms:ir.ui.view,arch_db:project_mng.report_view_search
+msgid "Group By"
+msgstr ""
 
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__priority__2
@@ -309,6 +329,7 @@ msgstr ""
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_project__initial_date
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_task__initial_date
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Initial Date"
 msgstr "Fecha Inicial"
 
@@ -325,6 +346,7 @@ msgstr "Es Favorito"
 
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_employee__job_title
+#: model_terms:ir.ui.view,arch_db:project_mng.employee_view_search
 msgid "Job Title"
 msgstr "Título profesional"
 
@@ -426,6 +448,7 @@ msgstr "Prioridad"
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_message__project_id
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_report__project_id
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_task__project_id
+#: model_terms:ir.ui.view,arch_db:project_mng.report_view_search
 msgid "Project"
 msgstr "Proyecto"
 
@@ -507,6 +530,7 @@ msgstr "Recursos"
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_project__state
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_task__state
 #: model_terms:ir.ui.view,arch_db:project_mng.project_view_pivot
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "State"
 msgstr "Estado"
 
@@ -539,6 +563,7 @@ msgstr ""
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__testing
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_task__state__testing
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Testing"
 msgstr "Testeando"
 
@@ -546,6 +571,11 @@ msgstr "Testeando"
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_message__text
 msgid "Text"
 msgstr "Texto"
+
+#. module: project_mng
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
+msgid "To Do"
+msgstr ""
 
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_project__state__to_do
@@ -578,6 +608,7 @@ msgstr "Trabajador"
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_project__worker_ids
 #: model_terms:ir.ui.view,arch_db:project_mng.project_view_form
 #: model_terms:ir.ui.view,arch_db:project_mng.project_view_pivot
+#: model_terms:ir.ui.view,arch_db:project_mng.project_view_search
 msgid "Workers"
 msgstr "Trabajadores"
 

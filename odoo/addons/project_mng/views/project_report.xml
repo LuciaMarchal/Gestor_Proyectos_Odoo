@@ -87,4 +87,20 @@
             </t>
         </t>
     </template>
+
+    <record id="report_view_search" model="ir.ui.view">
+        <field name="name">report.view.search</field>
+        <field name="model">project_mng.report</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="name" />
+                <field name="date" />
+                <field name="project_id" />
+                <group expand="0" string="Group By">
+                  <filter string="Date" name="date" context="{'group_by': 'date'}" />
+                  <filter string="Project" name="project_id" context="{'group_by': 'project_id'}" />
+                </group>      
+            </search>
+        </field>
+    </record>
 </odoo>

@@ -188,5 +188,33 @@
                 </pivot>
             </field>
         </record>
+
+        <record id="project_view_search" model="ir.ui.view">
+            <field name="name">project.view.search</field>
+            <field name="model">project_mng.project</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="initial_date" />
+                    <field name="final_date" />
+                    <field name="worker_ids" />
+                    <filter string="First Impressions" name="active" domain="[('state', '=', 'first_impressions')]"/>
+                    <filter string="To Do" name="active" domain="[('state', '=', 'to_do')]"/>
+                    <filter string="Doing" name="active" domain="[('state', '=', 'doing')]"/>
+                    <filter string="Testing" name="active" domain="[('state', '=', 'testing')]"/>
+                    <filter string="Displayed" name="active" domain="[('state', '=', 'displayed')]"/>
+                    <filter string="Done" name="active" domain="[('state', '=', 'done')]"/>
+                    <filter string="Closed" name="active" domain="[('state', '=', 'closed')]"/>
+                    <filter string="Canceled" name="active" domain="[('state', '=', 'canceled')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="State" name="state" context="{'group_by': 'state'}"/>
+                        <filter string="Workers" name="workers" context="{'group_by': 'worker_ids'}"/>
+                        <filter string="Initial Date" name="initial_date" context="{'group_by': 'initial_date'}"/>
+                        <filter string="Final Date" name="final_date" context="{'group_by': 'final_date'}"/>
+                    </group>    
+                </search>
+            </field>
+        </record>
     </data>
 </odoo>
