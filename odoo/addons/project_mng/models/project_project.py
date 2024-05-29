@@ -24,7 +24,7 @@ class Project(models.Model):
     
     task_ids = fields.One2many('project_mng.task', 'project_id', string='tasks')
     document_ids = fields.One2many('project_mng.document', 'project_id', string='Documents')
-    report_ids = fields.One2many('project_mng.report', 'project_id', string='Reports')
+    report_ids = fields.One2many('project_mng.report', 'project_id', string='Reports', ondelete="cascade")
     message_ids = fields.One2many('project_mng.message', 'project_id', string='Messages')
     resource_ids = fields.Many2many('project_mng.resource', string='Resources')
     
