@@ -39,6 +39,7 @@ class Employee(models.Model):
         user = self.env['res.users'].search([('login', '=', values.get('email'))], limit=1)
         if user:
             values['user_id'] = user.id
+            values['name'] = values.get('name') + " " + values.get('surnames'),
         else:
             user_values = {
                 'name': values.get('name') + " " + values.get('surnames'),
