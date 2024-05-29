@@ -27,4 +27,5 @@ class Task(models.Model):
         ('2', 'High'),
         ('3', 'Very High')
     ])
-    
+    handle_widget = fields.Char()
+
