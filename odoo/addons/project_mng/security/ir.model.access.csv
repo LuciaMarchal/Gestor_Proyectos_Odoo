@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_project_manager,project_mng.project,model_project_mng_project,base.group_erp_manager,1,1,1,1
+access_project_manager,project_mng.project,model_project_mng_project,base.group_erp_manager,1,1,1,0
 access_message_manager,project_mng.message,model_project_mng_message,base.group_erp_manager,1,1,1,1
 access_document_manager,project_mng.document,model_project_mng_document,base.group_erp_manager,1,1,1,1
 access_employee_manager,project_mng.employee,model_project_mng_employee,base.group_erp_manager,1,1,1,1
@@ -7,13 +7,13 @@ access_report_manager,project_mng.report,model_project_mng_report,base.group_erp
 access_resource_manager,project_mng.resource,model_project_mng_resource,base.group_erp_manager,1,1,1,1
 access_task_manager,project_mng.task,model_project_mng_task,base.group_erp_manager,1,1,1,1
 
-access_project_user,project_mng.project,model_project_mng_project,base.group_erp_manager,1,0,0,0
-access_message_user,project_mng.message,model_project_mng_message,base.group_erp_manager,1,0,0,0
-access_document_user,project_mng.document,model_project_mng_document,base.group_erp_manager,1,0,0,0
-access_employee_user,project_mng.employee,model_project_mng_employee,base.group_erp_manager,1,0,0,0
-access_report_user,project_mng.report,model_project_mng_report,base.group_erp_manager,1,0,0,0
-access_resource_user,project_mng.resource,model_project_mng_resource,base.group_erp_manager,1,0,0,0
-access_task_user,project_mng.task,model_project_mng_task,base.group_erp_manager,1,0,0,0
+access_project_user,project_mng.project,model_project_mng_project,base.group_user,1,0,0,0
+access_message_user,project_mng.message,model_project_mng_message,base.group_user,1,0,0,0
+access_document_user,project_mng.document,model_project_mng_document,base.group_user,1,0,0,0
+access_employee_user,project_mng.employee,model_project_mng_employee,base.group_user,1,0,0,0
+access_report_user,project_mng.report,model_project_mng_report,base.group_user,1,0,0,0
+access_resource_user,project_mng.resource,model_project_mng_resource,base.group_user,1,0,0,0
+access_task_user,project_mng.task,model_project_mng_task,base.group_user,1,0,0,0
 
 access_project_employee,project_mng.project,model_project_mng_project,project_mng_group_employee,1,1,0,0
 access_message_employee,project_mng.message,model_project_mng_message,project_mng_group_employee,1,1,0,0
