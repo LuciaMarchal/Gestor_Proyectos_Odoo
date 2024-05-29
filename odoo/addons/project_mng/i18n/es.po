@@ -97,7 +97,7 @@ msgstr "Administrador"
 #. module: project_mng
 #: model:ir.ui.menu,name:project_mng.analysis_menu
 msgid "Analysis"
-msgstr "Analisis"
+msgstr "Análisis"
 
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_resource__availability
