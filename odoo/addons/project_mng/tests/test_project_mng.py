@@ -20,20 +20,17 @@ class TestProjectMng(TransactionCase):
     # REPORTS
     def test_report_creation(self):
         report = self.Report.create({
-            'file': b'Test File Content',
             'project_id': self.project.id,
         })
 
         self.assertTrue(report)
         self.assertEqual(report.project_id, self.project)
-        self.assertEqual(report.file, b'Test File Content')
         self.assertTrue(report.name)
         self.assertEqual(report.date, datetime.today().date())
 
     def test_sequence_generated_for_report(self):
         report = self.Report.create({
-            'file': b'Another Test File',
-            'project_id': self.project.id,
+            'project_id': self.project.id
         })
 
         self.assertTrue(report.name)
@@ -66,8 +63,7 @@ class TestProjectMng(TransactionCase):
         })
         
         states = [
-            'first_impressions', 'to_do', 'doing', 'testing', 
-            'displayed', 'done', 'closed'
+            'to_do', 'doing', 'testing', 'displayed', 'done', 'closed'
         ]
         
         for state in states:
