@@ -62,7 +62,8 @@
                             <page string="Tasks">
                                 <field name="task_ids">
                                     <tree editable="bottom">
-                                        <field name="name" widget="handle" />
+                                        <field name="handle_widget" widget="handle" />
+                                        <field name="name" />
                                         <field name="description" />
                                         <field name="initial_date" widget="date" />
                                         <field name="state" />
@@ -182,7 +183,7 @@
             <field name="name">project_view_pivot</field>
             <field name="model">project_mng.project</field>
             <field name="arch" type="xml">
-                <pivot string="Project State Pivot" disable_linking="True">
+                <pivot string="" disable_linking="True">
                     <field name="state" type="row" string="State" />
                     <field name="worker_ids" type="col" string="Workers"/>
                 </pivot>
