@@ -262,7 +262,7 @@ msgstr ""
 #. module: project_mng
 #: model:ir.model,name:project_mng.model_project_mng_employee
 msgid "Employee model"
-msgstr ""
+msgstr "Modelo de Empleado"
 
 #. module: project_mng
 #: model:ir.actions.act_window,name:project_mng.employee_menu_action
@@ -401,7 +401,7 @@ msgstr "Medio"
 #. module: project_mng
 #: model:ir.model,name:project_mng.model_project_mng_message
 msgid "Message model"
-msgstr ""
+msgstr "Modelo de Mensaje"
 
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_employee__message_ids
@@ -460,7 +460,7 @@ msgstr "Detalles de Proyecto"
 #. module: project_mng
 #: model:ir.actions.act_window,name:project_mng.project_menu_analysis
 msgid "Project Graph"
-msgstr ""
+msgstr "Gráfico de Proyecto"
 
 #. module: project_mng
 #: model:ir.model.fields.selection,name:project_mng.selection__project_mng_employee__job_title__manager
@@ -478,19 +478,14 @@ msgid "Project State"
 msgstr "Estado de Proyecto"
 
 #. module: project_mng
-#: model_terms:ir.ui.view,arch_db:project_mng.project_view_pivot
-msgid "Project State Pivot"
-msgstr ""
-
-#. module: project_mng
 #: model:ir.model,name:project_mng.model_project_mng_project
 msgid "Project model"
-msgstr ""
+msgstr "Modelo de Proyecto"
 
 #. module: project_mng
 #: model_terms:ir.ui.view,arch_db:project_mng.report_view
 msgid "Project report"
-msgstr ""
+msgstr "Informe de Proyecto"
 
 #. module: project_mng
 #: model:ir.actions.act_window,name:project_mng.project_menu_action
@@ -504,7 +499,7 @@ msgstr "Proyectos"
 #. module: project_mng
 #: model:ir.model,name:project_mng.model_project_mng_report
 msgid "Report model"
-msgstr ""
+msgstr "Modelo de Informe"
 
 #. module: project_mng
 #: model:ir.actions.act_window,name:project_mng.report_menu_action
@@ -518,7 +513,7 @@ msgstr "Informes"
 #: model:ir.model,name:project_mng.model_project_mng_document
 #: model:ir.model,name:project_mng.model_project_mng_resource
 msgid "Resource model"
-msgstr ""
+msgstr "Modelo de recurso"
 
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_project__resource_ids
@@ -542,7 +537,7 @@ msgstr "Apellidos"
 #. module: project_mng
 #: model:ir.model,name:project_mng.model_project_mng_task
 msgid "Task model"
-msgstr ""
+msgstr "Modelo de Tarea"
 
 #. module: project_mng
 #: model:ir.model.fields,field_description:project_mng.field_project_mng_employee__task_ids

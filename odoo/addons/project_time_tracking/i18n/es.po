@@ -92,7 +92,7 @@ msgstr "Proyecto"
 #. module: project_time_tracking
 #: model:ir.model,name:project_time_tracking.model_project_mng_project
 msgid "Project model"
-msgstr ""
+msgstr "Modelo de Proyecto"
 
 #. module: project_time_tracking
 #: model:ir.model.fields,field_description:project_time_tracking.field_project_time_tracking_project_time_tracking__start_time
@@ -109,7 +109,7 @@ msgstr "Tarea"
 #. module: project_time_tracking
 #: model:ir.model,name:project_time_tracking.model_project_mng_task
 msgid "Task model"
-msgstr ""
+msgstr "Modelo de Tarea"
 
 #. module: project_time_tracking
 #: model:ir.actions.act_window,name:project_time_tracking.project_menu_time_tracking
@@ -121,7 +121,7 @@ msgstr "Seguimiento del Tiempo"
 #. module: project_time_tracking
 #: model:ir.model,name:project_time_tracking.model_project_time_tracking_project_time_tracking
 msgid "Time Tracking model"
-msgstr ""
+msgstr "Modelo de Seguimiento de Tiempo"
 
 #. module: project_time_tracking
 #: model:ir.model.fields,field_description:project_time_tracking.field_project_mng_project__total_duration
