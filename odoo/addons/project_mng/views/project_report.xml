@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com> -->
 <odoo>
     <record id="report_view_tree" model="ir.ui.view">
         <field name="name">report.view.tree</field>

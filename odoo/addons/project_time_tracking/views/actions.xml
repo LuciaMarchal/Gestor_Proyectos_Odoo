@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com> -->
 <odoo>
   <data>
     <record id="project_menu_time_tracking" model="ir.actions.act_window">

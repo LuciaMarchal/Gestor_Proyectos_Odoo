@@ -1,4 +1,5 @@
-from odoo.addons.project_mng.common import TestProjectMngCommon
+# Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com>
+
 from datetime import datetime, timedelta
 from odoo.tests.common import TransactionCase
 

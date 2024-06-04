@@ -1,3 +1,5 @@
+# Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com>
+
 from odoo import models, fields, api
 
 class Project(models.Model):

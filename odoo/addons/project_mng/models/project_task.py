@@ -1,4 +1,6 @@
-from odoo import models, fields, api
+# Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com>
+
+from odoo import models, fields
 from datetime import datetime
 
 class Task(models.Model):

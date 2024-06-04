@@ -1,3 +1,5 @@
+# Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com>
+
 from odoo.tests.common import TransactionCase
 from datetime import datetime, timedelta
 

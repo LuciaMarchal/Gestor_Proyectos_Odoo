@@ -1,5 +1,6 @@
+# Copyright 2024 Lucia Marchal <lucia.marchal@educa.madrid.com>
+
 from odoo import models, fields, api
-from datetime import datetime, timedelta
 
 class TimeTracking(models.Model):
     _name = 'project_time_tracking.project_time_tracking'
