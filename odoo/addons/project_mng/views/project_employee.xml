@@ -12,9 +12,10 @@
                 <field name="job_title" />
                 <field name="department" />
                 <group expand="0" string="Group By">
-                    <filter string="Job Title" name="job_title" context="{'group_by': 'job_title'}"/>
-                    <filter string="Department" name="department" context="{'group_by': 'department'}"/>
-                </group>    
+                    <filter string="Job Title" name="job_title" context="{'group_by': 'job_title'}" />
+                    <filter string="Department" name="department"
+                        context="{'group_by': 'department'}" />
+                </group>
             </search>
         </field>
     </record>
@@ -26,22 +27,22 @@
             <tree string="" editable="bottom" sample="1">
                 <field name="name" />
                 <field name="surnames" />
-                <field name="email" widget="email"/>
-                <field name="phone" widget="phone"/>
+                <field name="email" widget="email" />
+                <field name="phone" widget="phone" />
                 <field name="job_title" />
                 <field name="department" />
             </tree>
         </field>
     </record>
- 
-    
+
+
     <record id="employee_view_kanban" model="ir.ui.view">
         <field name="name">employee.view.kanban</field>
         <field name="model">project_mng.employee</field>
         <field name="arch" type="xml">
             <kanban class="o_kanban_mobile">
-                <field name="name"/>
-                <field name="surnames"/>
+                <field name="name" />
+                <field name="surnames" />
                 <field name="job_title" />
                 <field name="department" />
                 <field name="email" />
@@ -55,23 +56,23 @@
                                     <li class="mb4" style="margin-top:25px;">
                                         <h4>
                                             <strong>
-                                                <field name="name"/>
-                                                <br/>
+                                                <field name="name" />
+                                                <br />
                                                 <field name="surnames" />
                                             </strong>
                                         </h4>
                                     </li>
                                     <li class="mb4" style="margin-top:-5px;">
-                                        <i class="fa fa-envelope" title="Email" role="img"/> 
-                                        <field name="email"/>
+                                        <i class="fa fa-envelope" title="Email" role="img" />
+                                        <field name="email" />
                                     </li>
                                     <li class="mb4" style="margin-top:-5px;">
-                                        <i class="fa fa-phone" title="Phone" role="img" /> 
-                                        <field name="phone"/>
+                                        <i class="fa fa-phone" title="Phone" role="img" />
+                                        <field name="phone" />
                                     </li>
                                     <li class="mb4" style="margin-top:-5px;">
-                                        <i class="fa fa-user" title="User" role="img"/>
-                                        <field name="department"/>
+                                        <i class="fa fa-user" title="User" role="img" />
+                                        <field name="department" />
                                     </li>
                                 </ul>
                             </div>
@@ -91,8 +92,8 @@
                     <group>
                         <field name="name" />
                         <field name="surnames" />
-                        <field name="email" widget="email"/>
-                        <field name="phone" widget="phone"/>
+                        <field name="email" widget="email" />
+                        <field name="phone" widget="phone" />
                         <field name="job_title" />
                         <field name="department" />
                     </group>

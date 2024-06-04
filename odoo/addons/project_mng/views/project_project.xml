@@ -5,12 +5,18 @@
             <field name="name">project_mng.view.tree</field>
             <field name="model">project_mng.project</field>
             <field name="arch" type="xml">
-                <tree string="">
+                <tree string="" 
+                    decoration-info="state in ['first_impressions', 'to_do']" 
+                    decoration-success="state in ['doing', 'testing', 'displayed']"
+                    decoration-muted="state in ['done', 'closed', '']"
+                    decoration-danger="state == 'canceled'"
+                >
                     <field name="is_favorite" widget="boolean_favorite" nolabel="1"/>
                     <field name="name" />
                     <field name="description" />
                     <field name="initial_date" />
                     <field name="final_date" />
+                    <field name="state" invisible="1"/>
                     <field name="worker_ids" widget="many2many_tags" />
                 </tree>
             </field>
