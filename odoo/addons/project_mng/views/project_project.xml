@@ -6,18 +6,18 @@
             <field name="name">project_mng.view.tree</field>
             <field name="model">project_mng.project</field>
             <field name="arch" type="xml">
-                <tree string="" 
-                    decoration-info="state in ['first_impressions', 'to_do']" 
+                <tree string=""
+                    decoration-info="state in ['first_impressions', 'to_do']"
                     decoration-success="state in ['doing', 'testing', 'displayed']"
                     decoration-muted="state in ['done', 'closed', '']"
                     decoration-danger="state == 'canceled'"
                 >
-                    <field name="is_favorite" widget="boolean_favorite" nolabel="1"/>
+                    <field name="is_favorite" widget="boolean_favorite" nolabel="1" />
                     <field name="name" />
                     <field name="description" />
                     <field name="initial_date" />
                     <field name="final_date" />
-                    <field name="state" invisible="1"/>
+                    <field name="state" invisible="1" />
                     <field name="worker_ids" widget="many2many_tags" />
                 </tree>
             </field>
@@ -112,7 +112,8 @@
                             <page string="Chat">
                                 <field name="message_ids">
                                     <tree editable="bottom" default_order="date_time desc">
-                                        <field name="is_favorite" widget="boolean_favorite" nolabel="1"/>
+                                        <field name="is_favorite" widget="boolean_favorite"
+                                            nolabel="1" />
                                         <field name="user_id" readonly="1" />
                                         <field name="text" placeholder="Write a message..." />
                                         <field name="date_time" readonly="1" />
@@ -152,21 +153,19 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">
-                                <div class="oe_kanban_content" style="margin-left: 50px;">
-                                    <div class="oe_kanban_card_header">
-                                        <strong>
-                                            <field name="name" />
-                                        </strong>
-                                    </div>
-                                    <div class="oe_kanban_card_body">
-                                        <field name="description" />
-                                        <br></br>
-                                        <field name="initial_date" />
-                                        <br></br>
-                                        <field name="final_date" />
-                                        <br></br>
-                                        <field name="worker_ids" widget="many2many_tags" />
-                                    </div>
+                                <div class="oe_kanban_card_header">
+                                    <strong>
+                                        <field name="name" />
+                                    </strong>
+                                </div>
+                                <div class="oe_kanban_card_body">
+                                    <field name="description" />
+                                    <br></br>
+                                    <field name="initial_date" />
+                                    <br></br>
+                                    <field name="final_date" />
+                                    <br></br>
+                                    <field name="worker_ids" widget="many2many_tags" />
                                 </div>
                             </div>
                         </t>
@@ -192,7 +191,7 @@
             <field name="arch" type="xml">
                 <pivot string="" disable_linking="True">
                     <field name="state" type="row" string="State" />
-                    <field name="worker_ids" type="col" string="Workers"/>
+                    <field name="worker_ids" type="col" string="Workers" />
                 </pivot>
             </field>
         </record>
@@ -207,20 +206,23 @@
                     <field name="initial_date" />
                     <field name="final_date" />
                     <field name="worker_ids" />
-                    <filter string="First Impressions" name="active" domain="[('state', '=', 'first_impressions')]"/>
-                    <filter string="To Do" name="active" domain="[('state', '=', 'to_do')]"/>
-                    <filter string="Doing" name="active" domain="[('state', '=', 'doing')]"/>
-                    <filter string="Testing" name="active" domain="[('state', '=', 'testing')]"/>
-                    <filter string="Displayed" name="active" domain="[('state', '=', 'displayed')]"/>
-                    <filter string="Done" name="active" domain="[('state', '=', 'done')]"/>
-                    <filter string="Closed" name="active" domain="[('state', '=', 'closed')]"/>
-                    <filter string="Canceled" name="active" domain="[('state', '=', 'canceled')]"/>
+                    <filter string="First Impressions" name="active"
+                        domain="[('state', '=', 'first_impressions')]" />
+                    <filter string="To Do" name="active" domain="[('state', '=', 'to_do')]" />
+                    <filter string="Doing" name="active" domain="[('state', '=', 'doing')]" />
+                    <filter string="Testing" name="active" domain="[('state', '=', 'testing')]" />
+                    <filter string="Displayed" name="active" domain="[('state', '=', 'displayed')]" />
+                    <filter string="Done" name="active" domain="[('state', '=', 'done')]" />
+                    <filter string="Closed" name="active" domain="[('state', '=', 'closed')]" />
+                    <filter string="Canceled" name="active" domain="[('state', '=', 'canceled')]" />
                     <group expand="0" string="Group By">
-                        <filter string="State" name="state" context="{'group_by': 'state'}"/>
-                        <filter string="Workers" name="workers" context="{'group_by': 'worker_ids'}"/>
-                        <filter string="Initial Date" name="initial_date" context="{'group_by': 'initial_date'}"/>
-                        <filter string="Final Date" name="final_date" context="{'group_by': 'final_date'}"/>
-                    </group>    
+                        <filter string="State" name="state" context="{'group_by': 'state'}" />
+                        <filter string="Workers" name="workers" context="{'group_by': 'worker_ids'}" />
+                        <filter string="Initial Date" name="initial_date"
+                            context="{'group_by': 'initial_date'}" />
+                        <filter string="Final Date" name="final_date"
+                            context="{'group_by': 'final_date'}" />
+                    </group>
                 </search>
             </field>
         </record>
