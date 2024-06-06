@@ -9,8 +9,7 @@ class Task(models.Model):
     
     name = fields.Char(required=True)
     description = fields.Text(required=True)
-    initial_date = fields.Date(default=datetime.today(), readonly=True)
-    final_date = fields.Date()
+    initial_date = fields.Date()
     state = fields.Selection([
         ('to_do', 'To do'),
         ('doing', 'Doing'),
